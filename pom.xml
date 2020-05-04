@@ -12,7 +12,7 @@
     <groupId>com.servi</groupId>
     <artifactId>study</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>study</name>
+    <name>Servi-Study</name>
     <description>common 工程</description>
     <packaging>pom</packaging>
 

@@ -11,7 +11,7 @@
     <groupId>com.servi.study</groupId>
     <artifactId>common</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>common</name>
+    <name>servi-common</name>
     <description>common project for Spring Boot</description>
 
     <dependencies>
