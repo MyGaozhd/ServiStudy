@@ -14,9 +14,13 @@
     <name>servi-juc</name>
     <description>JUC study project for Spring Boot</description>
 
-
-
     <dependencies>
+        <!--引入依赖-->
+        <dependency>
+            <groupId>com.servi.study</groupId>
+            <artifactId>common</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
 
         <!-- disruptor -->
         <dependency>
@@ -32,6 +36,12 @@
             <version>15.0</version>
         </dependency>
 
-    </dependencies>
+        <!-- sigar -->
+        <dependency>
+            <groupId>org.fusesource</groupId>
+            <artifactId>sigar</artifactId>
+            <version>1.6.4</version>
+        </dependency>
 
+    </dependencies>
 </project>
