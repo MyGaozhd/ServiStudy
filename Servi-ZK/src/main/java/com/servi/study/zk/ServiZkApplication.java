@@ -11,8 +11,6 @@ public class ServiZkApplication {
     public static void main(String[] args) {
         SpringApplication.run(ServiZkApplication.class, args);
 
-
-        IJsonUtil.toJson(new User("123","123"));
+        IJsonUtil.toJson("start end ");
     }
-
 }
