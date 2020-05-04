@@ -13,7 +13,7 @@
     <artifactId>study</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>servi-study</name>
-    <description>common 工程</description>
+    <description>Study Root</description>
     <packaging>pom</packaging>
 
 

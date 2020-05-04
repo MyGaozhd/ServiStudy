@@ -12,7 +12,7 @@
     <artifactId>common</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>servi-common</name>
-    <description>common project for Spring Boot</description>
+    <description>common project</description>
 
     <dependencies>
         <!-- Gson -->

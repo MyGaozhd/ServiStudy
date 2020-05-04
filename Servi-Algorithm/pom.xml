@@ -12,5 +12,6 @@
     <artifactId>servi-algorithm</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>servi-algorithm</name>
-    <description>algorithm study project for Spring Boot</description>
+    <description>algorithm study project</description>
+
 </project>

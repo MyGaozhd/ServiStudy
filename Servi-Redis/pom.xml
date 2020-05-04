@@ -12,6 +12,6 @@
     <artifactId>servi-redis</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>servi-redis</name>
-    <description>Demo project for Spring Boot</description>
+    <description>Redis study project</description>
 
 </project>

@@ -12,7 +12,7 @@
     <artifactId>servi-netty</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>servi-netty</name>
-    <description>Demo project for Spring Boot</description>
+    <description>Netty study project</description>
 
     <dependencies>
         <!-- netty-all -->

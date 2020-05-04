@@ -12,7 +12,7 @@
     <artifactId>servi-juc</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>servi-juc</name>
-    <description>JUC study project for Spring Boot</description>
+    <description>JUC study project</description>
 
     <dependencies>
         <!--引入依赖-->
