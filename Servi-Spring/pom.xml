@@ -3,10 +3,10 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.servi.study</groupId>
-    <artifactId>servi-mq</artifactId>
+    <artifactId>servi-spring</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>servi-mq</name>
-    <description>MQ study project</description>
+    <name>servi-spring</name>
+    <description>Spring study project</description>
 
     <parent>
         <groupId>com.servi.study</groupId>
@@ -22,18 +22,6 @@
             <artifactId>servi-common</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
-
-        <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>4.11</version>
-            <scope>test</scope>
-        </dependency>
-        <!-- amqp-client -->
-        <dependency>
-            <groupId>com.rabbitmq</groupId>
-            <artifactId>amqp-client</artifactId>
-            <version>5.7.3</version>
-        </dependency>
     </dependencies>
+
 </project>

@@ -3,10 +3,10 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.servi.study</groupId>
-    <artifactId>servi-mq</artifactId>
+    <artifactId>servi-extend</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>servi-mq</name>
-    <description>MQ study project</description>
+    <name>servi-extend</name>
+    <description>Extend test project</description>
 
     <parent>
         <groupId>com.servi.study</groupId>
@@ -15,7 +15,6 @@
     </parent>
 
     <dependencies>
-
         <!--引入依赖-->
         <dependency>
             <groupId>com.servi.study</groupId>
@@ -23,17 +22,19 @@
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
 
+        <!-- xfire -->
         <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>4.11</version>
-            <scope>test</scope>
+            <groupId>org.codehaus.xfire</groupId>
+            <artifactId>xfire-all</artifactId>
+            <version>1.2.6</version>
         </dependency>
-        <!-- amqp-client -->
+
+        <!-- java 图像处理 -->
         <dependency>
-            <groupId>com.rabbitmq</groupId>
-            <artifactId>amqp-client</artifactId>
-            <version>5.7.3</version>
+            <groupId>net.coobird</groupId>
+            <artifactId>thumbnailator</artifactId>
+            <version>0.4.10</version>
         </dependency>
     </dependencies>
+
 </project>

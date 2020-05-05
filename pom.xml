@@ -36,6 +36,8 @@
         <module>servi-netty</module>
         <module>servi-redis</module>
         <module>servi-zk</module>
+        <module>servi-extend</module>
+        <module>servi-spring</module>
     </modules>
 
     <dependencies>
@@ -43,7 +45,11 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter</artifactId>
         </dependency>
-
+        <!-- spring-boot-starter-aop -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-aop</artifactId>
+        </dependency>
         <dependency>
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-lang3</artifactId>
