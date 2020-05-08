@@ -24,7 +24,7 @@ public class XfireTest {
         request.append("<SYSTEM_CODE></SYSTEM_CODE>");
         request.append("<BRANCH_NO></BRANCH_NO>");
         request.append("<USER_NO></USER_NO>");
-        request.append("<BUSI_SERIAL_NO>" + "1002111000000110CM2Z"
+        request.append("<BUSI_SERIAL_NO>" + "1001A110000000102LI3"
                 + "</BUSI_SERIAL_NO>");
 
         request.append("<BATCH>");
@@ -49,7 +49,10 @@ public class XfireTest {
         request.append("</BATCH>");
         request.append("</CMDATA>");
 
-        String result = WSUtil.getWebserviceResponse("http://10.16.226.252:8399/TIMS-Server/services/ContentInfoService?wsdl",
+//        String result = WSUtil.getWebserviceResponse("http://10.16.226.252:8399/TIMS-Server/services/ContentInfoService?wsdl",
+//                "CMForMobile_OnePicQuery", request.toString());
+
+        String result = WSUtil.getWebserviceResponse("http://10.16.4.23:8599/TIMS-Server/services/ContentInfoService?wsdl",
                 "CMForMobile_OnePicQuery", request.toString());
 
         Gson gson = new Gson();
