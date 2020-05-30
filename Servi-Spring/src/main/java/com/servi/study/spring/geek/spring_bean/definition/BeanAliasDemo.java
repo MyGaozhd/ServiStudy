@@ -32,9 +32,9 @@ public class BeanAliasDemo {
         // 配置 XML 配置文件
         // 启动 Spring 应用上下文
         BeanFactory beanFactory = new ClassPathXmlApplicationContext("classpath:/spring-bean/bean-definitions-context.xml");
-        // 通过别名 xiaomage-user 获取曾用名 user 的 bean
+        // 通过别名 servi-user 获取曾用名 user 的 bean
         User user = beanFactory.getBean("user", User.class);
-        User xiaomageUser = beanFactory.getBean("xiaomage-user", User.class);
-        System.out.println("xiaomage-user 是否与 user Bean 相同：" + (user == xiaomageUser));
+        User serviUser = beanFactory.getBean("servi-user", User.class);
+        System.out.println("servi-user 是否与 user Bean 相同：" + (user == serviUser));
     }
 }

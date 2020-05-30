@@ -88,7 +88,7 @@ public class AnnotationBeanDefinitionDemo {
         /**
          * 通过 Java 注解的方式，定义了一个 Bean
          */
-        @Bean(name = {"user", "xiaomage-user"})
+        @Bean(name = {"user", "servi-user"})
         public User user() {
             User user = new User();
             user.setId(1L);
