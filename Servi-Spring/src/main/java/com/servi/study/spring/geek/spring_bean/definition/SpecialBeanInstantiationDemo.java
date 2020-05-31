@@ -46,7 +46,7 @@ public class SpecialBeanInstantiationDemo {
 
         displayServiceLoader(serviceLoader);
 
-//        demoServiceLoader();
+        demoServiceLoader();
 
         // 创建 UserFactory 对象，通过 AutowireCapableBeanFactory
         UserFactory userFactory = beanFactory.createBean(DefaultUserFactory.class);
@@ -55,6 +55,9 @@ public class SpecialBeanInstantiationDemo {
     }
 
     public static void demoServiceLoader() {
+        /**
+         * 必须把文件放在 META-INFO/services中
+         */
         ServiceLoader<UserFactory> serviceLoader = load(UserFactory.class, Thread.currentThread().getContextClassLoader());
         displayServiceLoader(serviceLoader);
     }
