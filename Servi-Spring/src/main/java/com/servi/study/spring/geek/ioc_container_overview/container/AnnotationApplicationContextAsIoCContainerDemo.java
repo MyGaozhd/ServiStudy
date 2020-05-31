@@ -16,6 +16,7 @@
  */
 package com.servi.study.spring.geek.ioc_container_overview.container;
 
+import com.servi.study.spring.geek.ioc_container_overview.domain.Company;
 import com.servi.study.spring.geek.ioc_container_overview.domain.User;
 import org.springframework.beans.factory.BeanFactory;
 import org.springframework.beans.factory.ListableBeanFactory;
@@ -42,6 +43,8 @@ public class AnnotationApplicationContextAsIoCContainerDemo {
         AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext();
         // 将当前类 AnnotationApplicationContextAsIoCContainerDemo 作为配置类（Configuration Class）
         applicationContext.register(AnnotationApplicationContextAsIoCContainerDemo.class);
+        //扫描包
+        applicationContext.scan("com.servi.study.spring.geek.ioc_container_overview.container");
         // 启动应用上下文
         applicationContext.refresh();
         // 依赖查找集合对象
@@ -68,6 +71,8 @@ public class AnnotationApplicationContextAsIoCContainerDemo {
             ListableBeanFactory listableBeanFactory = (ListableBeanFactory) beanFactory;
             Map<String, User> users = listableBeanFactory.getBeansOfType(User.class);
             System.out.println("查找到的所有的 User 集合对象：" + users);
+
+            System.out.println("查找到的所有的 Company 对象：" + listableBeanFactory.getBean(Company.class));
         }
     }
 
