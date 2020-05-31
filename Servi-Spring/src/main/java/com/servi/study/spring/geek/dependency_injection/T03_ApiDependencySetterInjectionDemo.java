@@ -22,12 +22,12 @@ import org.springframework.beans.factory.xml.XmlBeanDefinitionReader;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 /**
- * 基于 API 实现依赖 Constructor 注入示例
+ * 基于 API 实现依赖 Setter 方法注入示例
  *
  * @author servi
  * @since
  */
-public class ApiDependencyConstructorInjectionDemo {
+public class T03_ApiDependencySetterInjectionDemo {
 
     public static void main(String[] args) {
 
@@ -63,7 +63,7 @@ public class ApiDependencyConstructorInjectionDemo {
      */
     private static BeanDefinition createUserHolderBeanDefinition() {
         BeanDefinitionBuilder definitionBuilder = BeanDefinitionBuilder.genericBeanDefinition(UserHolder.class);
-        definitionBuilder.addConstructorArgReference("superUser");
+        definitionBuilder.addPropertyReference("user", "superUser");
         return definitionBuilder.getBeanDefinition();
     }
 

@@ -25,7 +25,7 @@ import org.springframework.beans.factory.xml.XmlBeanDefinitionReader;
  * @author servi
  * @since
  */
-public class XmlDependencyConstructorInjectionDemo {
+public class T05_XmlDependencyConstructorInjectionDemo {
 
     public static void main(String[] args) {
 

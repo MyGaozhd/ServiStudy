@@ -27,14 +27,14 @@ import org.springframework.context.annotation.Bean;
  * @author servi
  * @since
  */
-public class AnnotationDependencySetterInjectionDemo {
+public class T02_AnnotationDependencySetterInjectionDemo {
 
     public static void main(String[] args) {
 
         // 创建 BeanFactory 容器
         AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext();
         // 注册 Configuration Class（配置类）
-        applicationContext.register(AnnotationDependencySetterInjectionDemo.class);
+        applicationContext.register(T02_AnnotationDependencySetterInjectionDemo.class);
 
         XmlBeanDefinitionReader beanDefinitionReader = new XmlBeanDefinitionReader(applicationContext);
 

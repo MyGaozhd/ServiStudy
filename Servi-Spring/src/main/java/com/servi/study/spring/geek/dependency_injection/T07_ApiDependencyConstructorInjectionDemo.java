@@ -16,25 +16,28 @@
  */
 package com.servi.study.spring.geek.dependency_injection;
 
-import com.servi.study.spring.geek.ioc_container_overview.domain.User;
+import org.springframework.beans.factory.config.BeanDefinition;
+import org.springframework.beans.factory.support.BeanDefinitionBuilder;
 import org.springframework.beans.factory.xml.XmlBeanDefinitionReader;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import org.springframework.context.annotation.Bean;
 
 /**
- * 基于 Java 注解的依赖 Constructor 注入示例
+ * 基于 API 实现依赖 Constructor 注入示例
  *
  * @author servi
  * @since
  */
-public class AnnotationDependencyConstructorInjectionDemo {
+public class T07_ApiDependencyConstructorInjectionDemo {
 
     public static void main(String[] args) {
 
         // 创建 BeanFactory 容器
         AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext();
-        // 注册 Configuration Class（配置类）
-        applicationContext.register(AnnotationDependencyConstructorInjectionDemo.class);
+
+        // 生成 UserHolder 的 BeanDefinition
+        BeanDefinition userHolderBeanDefinition = createUserHolderBeanDefinition();
+        // 注册 UserHolder 的 BeanDefinition
+        applicationContext.registerBeanDefinition("userHolder", userHolderBeanDefinition);
 
         XmlBeanDefinitionReader beanDefinitionReader = new XmlBeanDefinitionReader(applicationContext);
 
@@ -53,8 +56,21 @@ public class AnnotationDependencyConstructorInjectionDemo {
         applicationContext.close();
     }
 
-    @Bean
-    public UserHolder userHolder(User user) {
-        return new UserHolder(user);
+    /**
+     * 为 {@link UserHolder} 生成 {@link BeanDefinition}
+     *
+     * @return
+     */
+    private static BeanDefinition createUserHolderBeanDefinition() {
+        BeanDefinitionBuilder definitionBuilder = BeanDefinitionBuilder.genericBeanDefinition(UserHolder.class);
+        definitionBuilder.addConstructorArgReference("superUser");
+        return definitionBuilder.getBeanDefinition();
     }
+
+//    @Bean
+//    public UserHolder userHolder(User user) { // superUser -> primary = true
+//        UserHolder userHolder = new UserHolder();
+//        userHolder.setUser(user);
+//        return userHolder;
+//    }
 }
