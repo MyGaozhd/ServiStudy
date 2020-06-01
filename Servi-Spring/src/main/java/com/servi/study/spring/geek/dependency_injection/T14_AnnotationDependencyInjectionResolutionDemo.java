@@ -39,7 +39,7 @@ import java.util.Optional;
  * @since
  */
 @Configuration
-public class AnnotationDependencyInjectionResolutionDemo {
+public class T14_AnnotationDependencyInjectionResolutionDemo {
 
     @Autowired          // 依赖查找（处理） + 延迟
     @Lazy
@@ -90,7 +90,7 @@ public class AnnotationDependencyInjectionResolutionDemo {
         // 创建 BeanFactory 容器
         AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext();
         // 注册 Configuration Class（配置类） -> Spring Bean
-        applicationContext.register(AnnotationDependencyInjectionResolutionDemo.class);
+        applicationContext.register(T14_AnnotationDependencyInjectionResolutionDemo.class);
 
         XmlBeanDefinitionReader beanDefinitionReader = new XmlBeanDefinitionReader(applicationContext);
 
@@ -102,7 +102,7 @@ public class AnnotationDependencyInjectionResolutionDemo {
         applicationContext.refresh();
 
         // 依赖查找 QualifierAnnotationDependencyInjectionDemo Bean
-        AnnotationDependencyInjectionResolutionDemo demo = applicationContext.getBean(AnnotationDependencyInjectionResolutionDemo.class);
+        T14_AnnotationDependencyInjectionResolutionDemo demo = applicationContext.getBean(T14_AnnotationDependencyInjectionResolutionDemo.class);
 
         // 期待输出 superUser Bean
         System.out.println("demo.user = " + demo.user);

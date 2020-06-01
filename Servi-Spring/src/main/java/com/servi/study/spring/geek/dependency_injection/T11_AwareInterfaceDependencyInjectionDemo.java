@@ -30,7 +30,7 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
  * @author servi
  * @since
  */
-public class AwareInterfaceDependencyInjectionDemo implements BeanFactoryAware, ApplicationContextAware {
+public class T11_AwareInterfaceDependencyInjectionDemo implements BeanFactoryAware, ApplicationContextAware {
 
     private static BeanFactory beanFactory;
 
@@ -42,7 +42,7 @@ public class AwareInterfaceDependencyInjectionDemo implements BeanFactoryAware, 
         // 创建 BeanFactory 容器
         AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext();
         // 注册 Configuration Class（配置类） -> Spring Bean
-        context.register(AwareInterfaceDependencyInjectionDemo.class);
+        context.register(T11_AwareInterfaceDependencyInjectionDemo.class);
 
         // 启动 Spring 应用上下文
         context.refresh();
@@ -56,11 +56,11 @@ public class AwareInterfaceDependencyInjectionDemo implements BeanFactoryAware, 
 
     @Override
     public void setBeanFactory(BeanFactory beanFactory) throws BeansException {
-        AwareInterfaceDependencyInjectionDemo.beanFactory = beanFactory;
+        T11_AwareInterfaceDependencyInjectionDemo.beanFactory = beanFactory;
     }
 
     @Override
     public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
-        AwareInterfaceDependencyInjectionDemo.applicationContext = applicationContext;
+        T11_AwareInterfaceDependencyInjectionDemo.applicationContext = applicationContext;
     }
 }

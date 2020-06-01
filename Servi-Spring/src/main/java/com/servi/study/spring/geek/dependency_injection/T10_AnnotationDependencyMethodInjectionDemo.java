@@ -30,7 +30,7 @@ import javax.annotation.Resource;
  * @author servi
  * @since
  */
-public class AnnotationDependencyMethodInjectionDemo {
+public class T10_AnnotationDependencyMethodInjectionDemo {
 
     private UserHolder userHolder;
 
@@ -56,7 +56,7 @@ public class AnnotationDependencyMethodInjectionDemo {
         // 创建 BeanFactory 容器
         AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext();
         // 注册 Configuration Class（配置类） -> Spring Bean
-        applicationContext.register(AnnotationDependencyMethodInjectionDemo.class);
+        applicationContext.register(T10_AnnotationDependencyMethodInjectionDemo.class);
 
         XmlBeanDefinitionReader beanDefinitionReader = new XmlBeanDefinitionReader(applicationContext);
 
@@ -68,7 +68,7 @@ public class AnnotationDependencyMethodInjectionDemo {
         applicationContext.refresh();
 
         // 依赖查找 AnnotationDependencyFieldInjectionDemo Bean
-        AnnotationDependencyMethodInjectionDemo demo = applicationContext.getBean(AnnotationDependencyMethodInjectionDemo.class);
+        T10_AnnotationDependencyMethodInjectionDemo demo = applicationContext.getBean(T10_AnnotationDependencyMethodInjectionDemo.class);
 
         // @Autowired 字段关联
         UserHolder userHolder = demo.userHolder;

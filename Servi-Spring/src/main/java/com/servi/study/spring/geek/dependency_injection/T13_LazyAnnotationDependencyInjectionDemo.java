@@ -16,88 +16,43 @@
  */
 package com.servi.study.spring.geek.dependency_injection;
 
-import com.servi.study.spring.geek.dependency_injection.annotation.UserGroup;
 import com.servi.study.spring.geek.ioc_container_overview.domain.User;
+import org.springframework.beans.factory.ObjectFactory;
+import org.springframework.beans.factory.ObjectProvider;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.xml.XmlBeanDefinitionReader;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-import java.util.Collection;
+import java.util.Set;
 
 /**
- * {@link Qualifier} 注解依赖注入
+ * {@link ObjectProvider} 实现延迟依赖注入
  *
  * @author servi
  * @see Qualifier
  * @since
  */
 @Configuration
-public class QualifierAnnotationDependencyInjectionDemo {
+public class T13_LazyAnnotationDependencyInjectionDemo {
 
     @Autowired
-    private User user; // superUser -> primary =true
+    @Qualifier("user")
+    private User user; // 实时注入
 
     @Autowired
-    @Qualifier("user") // 指定 Bean 名称或 ID
-    private User namedUser;
-
-    // 整体应用上下文存在 4 个 User 类型的 Bean:
-    // superUser
-    // user
-    // user1 -> @Qualifier
-    // user2 -> @Qualifier
+    private ObjectProvider<User> userObjectProvider; // 延迟注入
 
     @Autowired
-    private Collection<User> allUsers; // 2 Beans = user + superUser
-
-    @Autowired
-    @Qualifier
-    private Collection<User> qualifiedUsers; // 2 Beans = user1 + user2 -> 4 Beans = user1 + user2 + user3 + user4
-
-    @Autowired
-    @UserGroup
-    private Collection<User> groupedUsers; // 2 Beans = user3 + user4
-
-    @Bean
-    @Qualifier // 进行逻辑分组
-    public User user1() {
-        return createUser(7L);
-    }
-
-    @Bean
-    @Qualifier // 进行逻辑分组
-    public User user2() {
-        return createUser(8L);
-
-    }
-
-    @Bean
-    @UserGroup
-    public User user3() {
-        return createUser(9L);
-    }
-
-    @Bean
-    @UserGroup
-    public User user4() {
-        return createUser(10L);
-    }
-
-    private static User createUser(Long id) {
-        User user = new User();
-        user.setId(id);
-        return user;
-    }
+    private ObjectFactory<Set<User>> usersObjectFactory;
 
     public static void main(String[] args) {
 
         // 创建 BeanFactory 容器
         AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext();
         // 注册 Configuration Class（配置类） -> Spring Bean
-        applicationContext.register(QualifierAnnotationDependencyInjectionDemo.class);
+        applicationContext.register(T13_LazyAnnotationDependencyInjectionDemo.class);
 
         XmlBeanDefinitionReader beanDefinitionReader = new XmlBeanDefinitionReader(applicationContext);
 
@@ -109,18 +64,16 @@ public class QualifierAnnotationDependencyInjectionDemo {
         applicationContext.refresh();
 
         // 依赖查找 QualifierAnnotationDependencyInjectionDemo Bean
-        QualifierAnnotationDependencyInjectionDemo demo = applicationContext.getBean(QualifierAnnotationDependencyInjectionDemo.class);
+        T13_LazyAnnotationDependencyInjectionDemo demo = applicationContext.getBean(T13_LazyAnnotationDependencyInjectionDemo.class);
 
         // 期待输出 superUser Bean
         System.out.println("demo.user = " + demo.user);
-        // 期待输出 user Bean
-        System.out.println("demo.namedUser = " + demo.namedUser);
-        // 期待输出 superUser user user1 user2
-        System.out.println("demo.allUsers = " + demo.allUsers);
-        // 期待输出 user1 user2
-        System.out.println("demo.qualifiedUsers = " + demo.qualifiedUsers);
-        // 期待输出 user3 user4
-        System.out.println("demo.groupedUsers = " + demo.groupedUsers);
+        // 期待输出 superUser Bean
+        System.out.println("demo.userObjectProvider = " + demo.userObjectProvider.getObject()); // 继承 ObjectFactory
+        // 期待输出 superUser user Beans
+        System.out.println("demo.usersObjectFactory = " + demo.usersObjectFactory.getObject());
+
+        demo.userObjectProvider.forEach(System.out::println);
 
 
         // 显示地关闭 Spring 应用上下文
