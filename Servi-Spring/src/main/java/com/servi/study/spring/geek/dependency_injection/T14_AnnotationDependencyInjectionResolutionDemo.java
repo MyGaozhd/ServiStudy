@@ -22,6 +22,7 @@ import com.servi.study.spring.geek.ioc_container_overview.domain.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.beans.factory.config.DependencyDescriptor;
 import org.springframework.beans.factory.xml.XmlBeanDefinitionReader;
 import org.springframework.context.annotation.*;
 import org.springframework.core.Ordered;
@@ -35,7 +36,7 @@ import java.util.Optional;
  * 注解驱动的依赖注入处理过程
  *
  * @author servi
- * @see Qualifier
+ * @see DependencyDescriptor
  * @since
  */
 @Configuration
