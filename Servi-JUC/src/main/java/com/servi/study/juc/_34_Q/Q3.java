@@ -4,7 +4,7 @@ package com.servi.study.juc._34_Q;
  * volatile 保证可见性和有序性 解释原子性问题
  */
 public class Q3 {
-    private static volatile long count = 0;
+    private static volatile int count = 0;
 
     private void add() {
         int i = 0;
