@@ -1,5 +1,7 @@
 /**
  * volatile并不能保证多个线程共同修改running变量时所带来的不一致问题，也就是说volatile不能替代synchronized
+ *
+ * volatile 不能保证原子性
  */
 package com.servi.study.juc._12_Volatile;
 

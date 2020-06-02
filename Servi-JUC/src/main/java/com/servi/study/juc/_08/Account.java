@@ -11,7 +11,9 @@ package com.servi.study.juc._08;
 import java.util.concurrent.TimeUnit;
 
 public class Account {
+    //姓名
     String name;
+    //余额
     double balance;
 
     public synchronized void set(String name, double balance) {
@@ -39,7 +41,7 @@ public class Account {
             e.printStackTrace();
         }
 
-        System.out.println(a.getBalance());
+        System.out.println("name:" + a.name + " balance:" + a.getBalance());
 
         try {
             TimeUnit.SECONDS.sleep(2);
@@ -47,6 +49,6 @@ public class Account {
             e.printStackTrace();
         }
 
-        System.out.println(a.getBalance());
+        System.out.println("name:" + a.name + " balance:" + a.getBalance());
     }
 }

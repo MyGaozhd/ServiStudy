@@ -1,7 +1,6 @@
 /**
- * 同步和非同步方法是否可以同时调用？
+ * 同步和非同步方法是否可以同时调用？ 可以
  */
-
 package com.servi.study.juc._07;
 
 public class T {

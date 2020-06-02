@@ -1,6 +1,6 @@
 /**
  * synchronized关键字
- * 对某个对象加锁
+ * 对某个类加锁
  */
 package com.servi.study.juc._04;
 
@@ -8,7 +8,7 @@ public class T {
 
 	private static int count = 10;
 	
-	public synchronized static void m() { //这里等同于synchronized(T01_Functional.class)
+	public synchronized static void m() { //这里等同于synchronized(T.class)
 		count--;
 		System.out.println(Thread.currentThread().getName() + " count = " + count);
 	}
