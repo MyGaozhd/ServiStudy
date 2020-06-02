@@ -35,7 +35,7 @@ import org.openjdk.jol.info.ClassLayout;
 public class T01 {
 
     public static void main(String[] args) {
-        T a = new T();
-        System.out.println(ClassLayout.parseInstance(a).toPrintable());
+        Object o = new Object();
+        System.out.println(ClassLayout.parseInstance(o ).toPrintable());
     }
 }
