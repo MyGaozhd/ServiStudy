@@ -11,6 +11,7 @@ public class T02 {
         Thread.sleep(5000);
         Object o = new Object();
         System.out.println(ClassLayout.parseInstance(o ).toPrintable());
+
         System.out.println("==============================================");
         synchronized (o){
             System.out.println(ClassLayout.parseInstance(o ).toPrintable());

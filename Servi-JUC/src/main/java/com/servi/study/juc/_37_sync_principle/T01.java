@@ -37,5 +37,9 @@ public class T01 {
     public static void main(String[] args) {
         Object o = new Object();
         System.out.println(ClassLayout.parseInstance(o ).toPrintable());
+
+        //o.hashCode();
+        System.out.println(ClassLayout.parseInstance(o ).toPrintable());
+
     }
 }
