@@ -71,7 +71,7 @@ public class XfireTest {
 
     }
 
-    private static List<Map<String, Object>> getFileStruct(String xml, String taskid) {
+    public static List<Map<String, Object>> getFileStruct(String xml, String taskid) {
         List fileStructList = new ArrayList();
         String prefix;
         try {
