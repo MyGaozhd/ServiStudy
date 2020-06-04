@@ -6,7 +6,6 @@ package com.servi.study.juc._41_singleton;
  * getInstance() 的性能对应用程序很关键。
  */
 public class T04_Singleton {
-
     private static volatile T04_Singleton instance = null;
 
     private T04_Singleton() {

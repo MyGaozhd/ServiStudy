@@ -18,4 +18,7 @@ public class T {
 		}
 	}
 
+	public static void mm1() {
+
+	}
 }

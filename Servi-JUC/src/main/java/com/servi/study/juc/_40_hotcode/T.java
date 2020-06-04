@@ -16,6 +16,7 @@ public class T {
     }
 
     public static synchronized void m() {
+
     }
 
     public static void n() {
