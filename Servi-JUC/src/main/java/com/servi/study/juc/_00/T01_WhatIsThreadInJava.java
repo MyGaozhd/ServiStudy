@@ -2,7 +2,7 @@ package com.servi.study.juc._00;
 
 import java.util.concurrent.TimeUnit;
 
-public class T01_WhatIsThread {
+public class T01_WhatIsThreadInJava {
     private static class T1 extends Thread {
         @Override
         public void run() {
