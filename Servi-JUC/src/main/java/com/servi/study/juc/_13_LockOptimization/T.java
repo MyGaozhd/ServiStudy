@@ -7,7 +7,9 @@ package com.servi.study.juc._13_LockOptimization;
 
 import java.util.concurrent.TimeUnit;
 
-
+/**
+ * 锁优化
+ */
 public class T {
 	
 	int count = 0;
