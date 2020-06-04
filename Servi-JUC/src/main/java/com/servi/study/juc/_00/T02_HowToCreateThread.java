@@ -1,3 +1,8 @@
+/**
+ * 实现方案
+ * 1、集成 Thread 类
+ * 2、实现 Runnable 接口
+ */
 package com.servi.study.juc._00;
 
 public class T02_HowToCreateThread {
