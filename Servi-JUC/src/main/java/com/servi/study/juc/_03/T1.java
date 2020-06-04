@@ -1,6 +1,6 @@
 /**
  * synchronized关键字
- * 对某个对象加锁
+ * 对某个对象加锁 方法上锁
  */
 package com.servi.study.juc._03;
 

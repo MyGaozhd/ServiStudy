@@ -1,6 +1,5 @@
 /**
  * synchronized关键字
- * 对某个类加锁
  */
 package com.servi.study.juc._04;
 
