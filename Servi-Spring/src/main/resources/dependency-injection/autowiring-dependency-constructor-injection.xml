@@ -6,7 +6,7 @@
 
     <import resource="classpath:/ioc-container-overview/dependency-lookup-context.xml"/>
 
-    <bean class="com.servi.study.spring.geek.dependency_injection.UserHolder"
+    <bean class="com.servi.study.spring.geek._04_dependency_injection.UserHolder"
           autowire="constructor">
         <!--        <property name="user" ref="superUser" /> 替换成 autowiring 模式 -->
     </bean>

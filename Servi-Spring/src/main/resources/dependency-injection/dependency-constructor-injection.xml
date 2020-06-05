@@ -6,7 +6,7 @@
 
     <import resource="classpath:/ioc-container-overview/dependency-lookup-context.xml"/>
 
-    <bean class="com.servi.study.spring.geek.dependency_injection.UserHolder">
+    <bean class="com.servi.study.spring.geek._04_dependency_injection.UserHolder">
         <constructor-arg name="user" ref="superUser" />
     </bean>
 
