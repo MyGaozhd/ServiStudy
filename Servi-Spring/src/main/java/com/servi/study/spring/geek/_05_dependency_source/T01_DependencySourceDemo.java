@@ -1,19 +1,3 @@
-/*
- * Licensed to the Apache Software Foundation (ASF) under one or more
- * contributor license agreements.  See the NOTICE file distributed with
- * this work for additional information regarding copyright ownership.
- * The ASF licenses this file to You under the Apache License, Version 2.0
- * (the "License"); you may not use this file except in compliance with
- * the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
 package com.servi.study.spring.geek._05_dependency_source;
 
 import org.springframework.beans.factory.BeanFactory;
@@ -32,7 +16,7 @@ import javax.annotation.PostConstruct;
  * @author servi
  * @since
  */
-public class DependencySourceDemo {
+public class T01_DependencySourceDemo {
 
     // 注入在 postProcessProperties 方法执行，早于 setter注入，也早于 @PostConstruct
     @Autowired
@@ -78,13 +62,13 @@ public class DependencySourceDemo {
         // 创建 BeanFactory 容器
         AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext();
         // 注册 Configuration Class（配置类） -> Spring Bean
-        applicationContext.register(DependencySourceDemo.class);
+        applicationContext.register(T01_DependencySourceDemo.class);
 
         // 启动 Spring 应用上下文
         applicationContext.refresh();
 
         // 依赖查找 DependencySourceDemo Bean
-        DependencySourceDemo demo = applicationContext.getBean(DependencySourceDemo.class);
+        T01_DependencySourceDemo demo = applicationContext.getBean(T01_DependencySourceDemo.class);
 
         // 显示地关闭 Spring 应用上下文
         applicationContext.close();
