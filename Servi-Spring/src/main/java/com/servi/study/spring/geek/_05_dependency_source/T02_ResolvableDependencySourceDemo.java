@@ -11,7 +11,7 @@ import javax.annotation.PostConstruct;
  * @author servi
  * @since
  */
-public class ResolvableDependencySourceDemo {
+public class T02_ResolvableDependencySourceDemo {
 
     @Autowired
     private String value;
@@ -27,7 +27,7 @@ public class ResolvableDependencySourceDemo {
         AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext();
 
         // 注册 Configuration Class（配置类） -> Spring Bean
-        applicationContext.register(ResolvableDependencySourceDemo.class);
+        applicationContext.register(T02_ResolvableDependencySourceDemo.class);
 
         applicationContext.addBeanFactoryPostProcessor(beanFactory -> {
             // 注册 Resolvable Dependency
