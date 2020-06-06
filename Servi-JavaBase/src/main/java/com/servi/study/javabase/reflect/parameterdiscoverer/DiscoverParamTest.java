@@ -1,4 +1,4 @@
-package com.servi.study.javabase.parameterdiscoverer;
+package com.servi.study.javabase.reflect.parameterdiscoverer;
 
 import com.servi.study.json.IJsonUtil;
 import org.springframework.core.DefaultParameterNameDiscoverer;

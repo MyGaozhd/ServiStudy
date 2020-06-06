@@ -11,7 +11,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
  * @author servi
  * @since
  */
-public class BeanInstantiationLifecycleDemo {
+public class T05_BeanInstantiationLifecycleDemo {
 
     public static void main(String[] args) {
         executeBeanFactory();
@@ -28,7 +28,7 @@ public class BeanInstantiationLifecycleDemo {
         // 方法二：将 MyInstantiationAwareBeanPostProcessor 作为 Bean 注册
         // 基于 XML 资源 BeanDefinitionReader 实现
         XmlBeanDefinitionReader beanDefinitionReader = new XmlBeanDefinitionReader(beanFactory);
-        String[] locations = {"META-INF/dependency-lookup-context.xml", "bean_lifecycle\\bean-constructor-dependency-injection.xml"};
+        String[] locations = {"ioc-container-overview\\dependency-lookup-context.xml", "bean_lifecycle\\bean-constructor-dependency-injection.xml"};
         int beanNumbers = beanDefinitionReader.loadBeanDefinitions(locations);
         System.out.println("已加载 BeanDefinition 数量：" + beanNumbers);
         // 通过 Bean Id 和类型进行依赖查找
@@ -45,7 +45,7 @@ public class BeanInstantiationLifecycleDemo {
 
     private static void executeApplicationContext() {
         ClassPathXmlApplicationContext applicationContext = new ClassPathXmlApplicationContext();
-        String[] locations = {"META-INF/dependency-lookup-context.xml", "bean_lifecycle\\bean-constructor-dependency-injection.xml"};
+        String[] locations = {"ioc-container-overview\\dependency-lookup-context.xml", "bean_lifecycle\\bean-constructor-dependency-injection.xml"};
         applicationContext.setConfigLocations(locations);
         // 启动应用上下文
         applicationContext.refresh();
