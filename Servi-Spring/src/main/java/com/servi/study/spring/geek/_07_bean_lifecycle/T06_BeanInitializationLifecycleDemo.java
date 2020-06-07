@@ -11,7 +11,7 @@ import org.springframework.context.annotation.CommonAnnotationBeanPostProcessor;
  * @author servi
  * @since
  */
-public class BeanInitializationLifecycleDemo {
+public class T06_BeanInitializationLifecycleDemo {
 
     public static void main(String[] args) {
 
