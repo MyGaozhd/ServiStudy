@@ -11,7 +11,7 @@ import org.springframework.context.annotation.CommonAnnotationBeanPostProcessor;
  * @author servi
  * @since
  */
-public class BeanLifecycleDemo {
+public class T07_BeanLifecycleDemo {
 
     public static void main(String[] args) throws InterruptedException {
         DefaultListableBeanFactory beanFactory = new DefaultListableBeanFactory();
@@ -23,13 +23,13 @@ public class BeanLifecycleDemo {
         beanFactory.addBeanPostProcessor(new CommonAnnotationBeanPostProcessor());
 
         XmlBeanDefinitionReader beanDefinitionReader = new XmlBeanDefinitionReader(beanFactory);
-        String[] locations = {"META-INF/dependency-lookup-context.xml", "bean_lifecycle\bean-constructor-dependency-injection.xml"};
+        String[] locations = {"ioc-container-overview\\dependency-lookup-context.xml", "bean_lifecycle\\bean-constructor-dependency-injection.xml"};
         int beanNumbers = beanDefinitionReader.loadBeanDefinitions(locations);
         System.out.println("已加载 BeanDefinition 数量：" + beanNumbers);
         // 显示地执行 preInstantiateSingletons()
         // SmartInitializingSingleton 通常在 Spring ApplicationContext 场景使用
         // preInstantiateSingletons 将已注册的 BeanDefinition 初始化成 Spring Bean
-        beanFactory.preInstantiateSingletons();
+//        beanFactory.preInstantiateSingletons();
 
         // 通过 Bean Id 和类型进行依赖查找
         User user = beanFactory.getBean("user", User.class);
