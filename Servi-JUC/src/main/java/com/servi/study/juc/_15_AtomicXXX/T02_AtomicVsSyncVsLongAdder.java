@@ -82,7 +82,7 @@ public class T02_AtomicVsSyncVsLongAdder {
 
         //TimeUnit.SECONDS.sleep(10);
 
-        System.out.println("LongAdder: " + count1.longValue() + " time " + (end-start));
+        System.out.println("LongAdder: " + count3.sum()+ " time " + (end-start));
 
     }
 
