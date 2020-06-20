@@ -32,7 +32,6 @@ public class UserBeanDefinitionParser extends AbstractSingleBeanDefinitionParser
         String attributeValue = element.getAttribute(attributeName);
         if (StringUtils.hasText(attributeValue)) {
             builder.addPropertyValue(attributeName, attributeValue); // -> <property name="" value=""/>
-
         }
     }
 }

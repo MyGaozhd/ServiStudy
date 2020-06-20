@@ -1,0 +1,2 @@
+## 定义 namespace 与 NamespaceHandler 的映射
+http\://servi.study.spring/schema/users=com.servi.study.spring.geek._08_configuration_metadata.UsersNamespaceHandler

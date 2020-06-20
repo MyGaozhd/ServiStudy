@@ -4,10 +4,17 @@ import redis.clients.jedis.Jedis;
 
 import java.util.UUID;
 
+/**
+ * CONFIG SET protected-mode no
+ */
 public class T01_200W_Data {
     //连接本地的 Redis 服务
-    Jedis jedis = new Jedis("127.0.0.1");
+    Jedis jedis = null;
 
+    public T01_200W_Data() {
+        jedis = new Jedis("10.16.3.116", 6379);
+//        jedis.auth("123456");
+    }
 
     public void set(String name) {
         String key = "global:lock:lock_de_idx_service:" + name;
@@ -33,14 +40,14 @@ public class T01_200W_Data {
     public static void main(String[] args) {
 
         T01_200W_Data t = new T01_200W_Data();
-        String name = UUID.randomUUID().toString();
-//
-        long start1 = System.currentTimeMillis();
-        t.set(name);
-        long start2 = System.currentTimeMillis();
-        t.reset(name);
-        long start3 = System.currentTimeMillis();
-        System.out.println(" start1 = " + start1 + " start2 = " + start2 + " start3 = " + start3);
+//        String name = UUID.randomUUID().toString();
+////
+//        long start1 = System.currentTimeMillis();
+//        t.set(name);
+//        long start2 = System.currentTimeMillis();
+//        t.reset(name);
+//        long start3 = System.currentTimeMillis();
+//        System.out.println(" start1 = " + start1 + " start2 = " + start2 + " start3 = " + start3);
 
 //        long start3 = System.currentTimeMillis();
 //        t.set(name);//

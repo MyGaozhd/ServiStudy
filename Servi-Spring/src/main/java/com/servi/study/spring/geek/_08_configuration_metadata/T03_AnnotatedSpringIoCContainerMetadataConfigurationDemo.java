@@ -13,12 +13,12 @@ import java.util.Map;
  * @since
  */
 // 将当前类作为 Configuration Class
-@ImportResource("classpath:/META-INF/dependency-lookup-context.xml")
+@ImportResource("classpath:ioc-container-overview\\dependency-lookup-context.xml")
 @Import(User.class)
-@PropertySource("classpath:/META-INF/user-bean-definitions.properties") // Java 8+ @Repeatable 支持
-@PropertySource("classpath:/META-INF/user-bean-definitions.properties")
+@PropertySource("classpath:configuration-metadata\\user-bean-definitions.properties") // Java 8+ @Repeatable 支持
+@PropertySource("classpath:configuration-metadata\\user-bean-definitions.properties")
 // @PropertySources(@PropertySource(...))
-public class AnnotatedSpringIoCContainerMetadataConfigurationDemo {
+public class T03_AnnotatedSpringIoCContainerMetadataConfigurationDemo {
 
     /**
      * user.name 是 Java Properties 默认存在，当前用户：mercyblitz，而非配置文件中定义"Servi"
@@ -37,7 +37,7 @@ public class AnnotatedSpringIoCContainerMetadataConfigurationDemo {
     public static void main(String[] args) {
         AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext();
         // 注册当前类作为 Configuration Class
-        context.register(AnnotatedSpringIoCContainerMetadataConfigurationDemo.class);
+        context.register(T03_AnnotatedSpringIoCContainerMetadataConfigurationDemo.class);
         // 启动 Spring 应用上下文
         context.refresh();
         // beanName 和 bean 映射
