@@ -16,11 +16,11 @@ import java.util.Map;
  * @author servi
  * @since
  */
-@PropertySource("classpath:/META-INF/user-bean-definitions.properties")
-public class PropertySourceDemo {
+@PropertySource("classpath:configuration-metadata\\user-bean-definitions.properties")
+public class T05_PropertySourceDemo {
 
     /**
-     * user.name 是 Java Properties 默认存在，当前用户：mercyblitz，而非配置文件中定义"Servi"
+     * user.name 是 Java Properties 默认存在，当前用户：Administrator，而非配置文件中定义"Servi"
      *
      * @param id
      * @param name
@@ -45,7 +45,7 @@ public class PropertySourceDemo {
         context.getEnvironment().getPropertySources().addFirst(propertySource);
 
         // 注册当前类作为 Configuration Class
-        context.register(PropertySourceDemo.class);
+        context.register(T05_PropertySourceDemo.class);
         // 启动 Spring 应用上下文
         context.refresh();
         // beanName 和 bean 映射

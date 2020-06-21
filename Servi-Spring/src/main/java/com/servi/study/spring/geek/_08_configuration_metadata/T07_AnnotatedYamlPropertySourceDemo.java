@@ -15,12 +15,12 @@ import org.springframework.context.annotation.PropertySource;
  */
 @PropertySource(
         name = "yamlPropertySource",
-        value = "classpath:/META-INF/user.yaml",
+        value = "classpath:configuration-metadata\\user.yaml",
         factory = YamlPropertySourceFactory.class)
-public class AnnotatedYamlPropertySourceDemo {
+public class T07_AnnotatedYamlPropertySourceDemo {
 
     /**
-     * user.name 是 Java Properties 默认存在，当前用户：mercyblitz，而非配置文件中定义"Servi"
+     * user.name 是 Java Properties 默认存在，当前用户：Administrator，而非配置文件中定义"Servi"
      *
      * @param id
      * @param name
@@ -38,7 +38,7 @@ public class AnnotatedYamlPropertySourceDemo {
     public static void main(String[] args) {
         AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext();
         // 注册当前类作为 Configuration Class
-        context.register(AnnotatedYamlPropertySourceDemo.class);
+        context.register(T07_AnnotatedYamlPropertySourceDemo.class);
         // 启动 Spring 应用上下文
         context.refresh();
         // 获取 Map YAML 对象
