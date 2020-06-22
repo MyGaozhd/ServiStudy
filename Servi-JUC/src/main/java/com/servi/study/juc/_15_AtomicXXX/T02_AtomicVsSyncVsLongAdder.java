@@ -8,6 +8,7 @@ import java.util.concurrent.atomic.LongAdder;
  * Atomic: 100000000 time 2139
  * Sync: 100000000 time 3746
  * LongAdder: 100000000 time 446
+ * @see 'io.netty.util.internal.PlatformDependent#newLongCounter'
  */
 public class T02_AtomicVsSyncVsLongAdder {
     static long count2 = 0L;
