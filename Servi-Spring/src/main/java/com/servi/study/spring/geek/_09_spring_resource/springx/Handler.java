@@ -12,7 +12,9 @@ import java.nio.charset.Charset;
  * 简单地继承 {@link sun.net.www.protocol.x.Handler} 类
  *
  * @author servi
- * @since
+ * @see sun.net.www.protocol.x.Handler
+ * 协议的名称是 根据 包名 com.servi.study.spring.geek._09_spring_resource.springx来确定的。
+ * springx 就是协议的名称。就是 handler 的包的最后一级
  */
 public class Handler extends sun.net.www.protocol.x.Handler {
 

@@ -11,7 +11,8 @@ import java.nio.charset.Charset;
  * X Handler 测试示例
  *
  * @author servi
- * @since
+ * 协议的名称是 根据 包名 sun.net.www.protocol.x 来确定的。
+ * protocol 后面的 x 就是协议的名称 就是 handler 的包的最后一级
  */
 public class HandlerTest {
 
