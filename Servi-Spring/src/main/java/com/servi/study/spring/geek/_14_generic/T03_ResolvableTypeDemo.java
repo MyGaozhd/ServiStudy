@@ -9,7 +9,7 @@ import org.springframework.core.ResolvableType;
  * @see ResolvableType
  * @since
  */
-public class ResolvableTypeDemo {
+public class T03_ResolvableTypeDemo {
 
     public static void main(String[] args) {
         // 工厂创建

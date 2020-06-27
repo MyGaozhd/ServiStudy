@@ -12,7 +12,7 @@ import java.util.stream.Stream;
  * @author servi
  * @since
  */
-public class GenericAPIDemo {
+public class T02_GenericAPIDemo {
 
     public static void main(String[] args) {
 

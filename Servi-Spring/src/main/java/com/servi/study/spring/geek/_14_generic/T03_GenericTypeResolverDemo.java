@@ -19,18 +19,21 @@ import static org.springframework.core.GenericTypeResolver.resolveReturnTypeArgu
  * @see GenericTypeResolver
  * @since
  */
-public class GenericTypeResolverDemo {
+public class T03_GenericTypeResolverDemo {
 
     public static void main(String[] args) throws NoSuchMethodException {
 
         // String 是 Comparable<String> 具体化
-        displayReturnTypeGenericInfo(GenericTypeResolverDemo.class, Comparable.class, "getString");
+        displayReturnTypeGenericInfo(T03_GenericTypeResolverDemo.class, Comparable.class, "getString");
 
         // ArrayList<Object> 是 List 泛型参数类型的具体化
-        displayReturnTypeGenericInfo(GenericTypeResolverDemo.class, List.class, "getList");
+        displayReturnTypeGenericInfo(T03_GenericTypeResolverDemo.class, List.class, "getList");
+
+        // ArrayList<E> 无具体参数类型
+        displayReturnTypeGenericInfo(T03_GenericTypeResolverDemo.class, List.class, "getEList");
 
         // StringList 也是 List 泛型参数类型的具体化
-        displayReturnTypeGenericInfo(GenericTypeResolverDemo.class, List.class, "getStringList");
+        displayReturnTypeGenericInfo(T03_GenericTypeResolverDemo.class, List.class, "getStringList");
 
         // 具备 ParameterizedType 返回，否则 null
 
@@ -49,6 +52,10 @@ public class GenericTypeResolverDemo {
     }
 
     public static String getString() {
+        return null;
+    }
+
+    public static <E> List<E> getEList() { // 泛型参数类型具体化
         return null;
     }
 

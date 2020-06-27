@@ -9,7 +9,7 @@ import java.util.Collection;
  * @author servi
  * @since
  */
-public class GenericDemo {
+public class T01_GenericDemo {
 
     public static void main(String[] args) {
         // Java 7 Diamond 语法
