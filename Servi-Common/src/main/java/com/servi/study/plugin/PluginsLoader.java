@@ -16,7 +16,7 @@ public class PluginsLoader {
         return load(pluginInterface, pluginInterface.getClassLoader(), new IPluginsLoader() {
             @Override
             public <P extends IPlugin> List<P> loader(Class<P> pluginInterface, ClassLoader classLoader) {
-                ServiceLoader<P> services = ServiceLoader.load(pluginInterface);
+                ServiceLoader<P> services = ServiceLoader.load(pluginInterface, classLoader);
                 List<P> plugins = new ArrayList<>();
                 services.forEach(plugin -> {
                     plugins.add(plugin);
