@@ -38,7 +38,6 @@
         <module>servi-zk</module>
         <module>servi-extend</module>
         <module>servi-spring</module>
-        <module>Servi-RPC</module>
     </modules>
 
     <dependencies>
