@@ -9,4 +9,9 @@ public class TestServiceImpl_2 implements ITestService {
     public void test() {
         System.out.println(this.getClass().getName());
     }
+
+    @Override
+    public int order() {
+        return 2;
+    }
 }
