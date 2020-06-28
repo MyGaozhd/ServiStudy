@@ -3,9 +3,9 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.servi.study</groupId>
-    <artifactId>servi-rpc</artifactId>
+    <artifactId>servi-db</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>servi-rpc</name>
+    <name>servi-db</name>
     <description>RPC frameWork project</description>
 
     <parent>
@@ -22,4 +22,5 @@
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
     </dependencies>
+
 </project>
