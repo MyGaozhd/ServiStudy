@@ -11,14 +11,19 @@ import org.springframework.stereotype.Component;
  * @date 2020/6/29
  */
 @Component
-public class BeforeInvokeChain extends AbstractInvokeChain implements IBeforeInvoke {
+public class BeforeInvokeChain_2 extends AbstractInvokeChain implements IBeforeInvoke {
 
     @Override
     public void excute(IRequest req, IResponse res) {
-        System.out.println(BeforeInvokeChain.class.getName() + "->" + req.getClass().toString());
-        System.out.println(BeforeInvokeChain.class.getName() + "->" + res.getClass().toString());
+        System.out.println(BeforeInvokeChain_2.class.getName() + "->" + req.getClass().toString());
+        System.out.println(BeforeInvokeChain_2.class.getName() + "->" + res.getClass().toString());
         if (next() != null) {
             next().excute(req, res);
         }
+    }
+
+    @Override
+    public int order() {
+        return 2;
     }
 }

@@ -15,10 +15,6 @@ class RPCApplicationTests {
 
         InvokeChainManager.invoke(IRPCInvoke.class, new IRequest() {
         }, new IResponse() {
-            @Override
-            public int hashCode() {
-                return super.hashCode();
-            }
         });
     }
 }
