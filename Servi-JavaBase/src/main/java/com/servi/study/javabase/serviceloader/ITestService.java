@@ -9,12 +9,11 @@ import com.servi.study.plugin.chain.IInvokeChain;
  */
 public interface ITestService extends IInvokeChain<String, String> {
     @Override
-    default boolean excute(String req, String res) {
+    default void excute(String req, String res) {
         System.out.println(this.getClass().getName() + ":req->" + req);
         System.out.println(this.getClass().getName() + ":res->" + res);
         if (next() != null) {
-            return next().excute(req, res);
+            next().excute(req, res);
         }
-        return false;
     }
 }

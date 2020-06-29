@@ -13,7 +13,7 @@ public interface IInvokeChain<REQ, RES> extends IPlugin {
     /**
      * @return 设置上一个 null 表示是第一个
      */
-    default <I extends IInvokeChain<REQ, RES>> boolean setPre(I i) {
+    default <I extends IInvokeChain<REQ, RES>> boolean setPre(I pre) {
         throw new RuntimeException("不支持此设置");
     }
 
@@ -27,7 +27,7 @@ public interface IInvokeChain<REQ, RES> extends IPlugin {
     /**
      * @return 设置下一个 null 表示最后一个
      */
-    default <I extends IInvokeChain<REQ, RES>> boolean setNext(I i) {
+    default <I extends IInvokeChain<REQ, RES>> boolean setNext(I next) {
         throw new RuntimeException("不支持此设置");
     }
 
@@ -43,5 +43,5 @@ public interface IInvokeChain<REQ, RES> extends IPlugin {
      * @param res 返回值
      * @return true 继续next请求 false 结束请求
      */
-    boolean excute(REQ req, RES res);
+    void excute(REQ req, RES res);
 }
