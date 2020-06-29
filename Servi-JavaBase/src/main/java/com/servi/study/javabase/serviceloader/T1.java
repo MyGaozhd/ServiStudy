@@ -14,7 +14,7 @@ public class T1 {
         List<ITestService> plugins = PluginsLoader.load(ITestService.class);
 
         plugins.forEach(p -> {
-            System.out.println(p);
+            p.excute("aaa", "bbb");
         });
     }
 }

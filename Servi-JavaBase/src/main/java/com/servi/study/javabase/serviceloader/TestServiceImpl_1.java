@@ -6,11 +6,6 @@ package com.servi.study.javabase.serviceloader;
  */
 public class TestServiceImpl_1 implements ITestService {
     @Override
-    public void test() {
-        System.out.println(this.getClass().getName());
-    }
-
-    @Override
     public int order() {
         return 1;
     }

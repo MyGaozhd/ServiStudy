@@ -1,7 +1,7 @@
 package com.servi.study.plugin;
 
 /**
- * 顶层插件接口 无具体实现类
+ * 插件标志接口
  */
 public interface IPlugin {
 
@@ -9,9 +9,7 @@ public interface IPlugin {
     public static final int default_sort_order = Integer.MIN_VALUE;
 
     /**
-     * 排序
-     *
-     * @return
+     * @return 排序位置
      */
     public default int order() {
         return default_sort_order;

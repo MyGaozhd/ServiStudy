@@ -13,7 +13,7 @@ public class T {
 
         ServiceLoader<ITestService> services = ServiceLoader.load(ITestService.class, ITestService.class.getClassLoader());
         services.forEach(t -> {
-            t.test();
+            t.excute("aaa", "bbb");
         });
     }
 }

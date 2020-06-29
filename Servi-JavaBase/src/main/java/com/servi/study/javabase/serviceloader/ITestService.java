@@ -1,11 +1,20 @@
 package com.servi.study.javabase.serviceloader;
 
 import com.servi.study.plugin.IPlugin;
+import com.servi.study.plugin.chain.IInvokeChain;
 
 /**
  * @author servi
  * @date 2020/6/23
  */
-public interface ITestService extends IPlugin {
-    void test();
+public interface ITestService extends IInvokeChain<String, String> {
+    @Override
+    default boolean excute(String req, String res) {
+        System.out.println(this.getClass().getName() + ":req->" + req);
+        System.out.println(this.getClass().getName() + ":res->" + res);
+        if (next() != null) {
+            return next().excute(req, res);
+        }
+        return false;
+    }
 }
