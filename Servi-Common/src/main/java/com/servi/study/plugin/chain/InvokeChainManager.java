@@ -1,6 +1,5 @@
 package com.servi.study.plugin.chain;
 
-import com.servi.study.plugin.IPlugin;
 import com.servi.study.plugin.PluginsLoader;
 import org.springframework.util.CollectionUtils;
 
