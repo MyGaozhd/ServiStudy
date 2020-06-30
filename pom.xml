@@ -39,7 +39,6 @@
         <module>servi-extend</module>
         <module>servi-spring</module>
         <module>servi-rpc</module>
-        <module>servi-db</module>
     </modules>
 
     <dependencies>
