@@ -2,7 +2,6 @@ package com.servi.study.boot.controller;
 
 import com.servi.study.boot.bean.Dog;
 import com.servi.study.boot.bean.People;
-import org.springframework.beans.factory.BeanFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
