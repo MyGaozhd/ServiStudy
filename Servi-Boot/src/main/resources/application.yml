@@ -5,3 +5,8 @@ dog:
   age: 2
   species: DOG
   sex: 公
+people:
+  name: servi
+  pets:
+    - {name: 狗1, age: 1}
+    - {name: 狗2, age: 2}

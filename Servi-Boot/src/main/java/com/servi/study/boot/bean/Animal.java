@@ -4,6 +4,7 @@ import lombok.Data;
 
 @Data
 public class Animal {
+
     private Species species;
 
     public enum Species {
