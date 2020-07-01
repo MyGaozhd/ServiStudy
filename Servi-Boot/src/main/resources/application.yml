@@ -1,0 +1,7 @@
+server:
+  port: 8080
+dog:
+  name: 小狗
+  age: 2
+  species: DOG
+  sex: 公
