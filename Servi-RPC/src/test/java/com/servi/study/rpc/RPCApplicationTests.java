@@ -31,7 +31,7 @@ class RPCApplicationTests {
     }
 
     @Test
-    void testLoader() {
+    void testLoaderAutoSort() {
 
         InvokeChainManager.invoke(IRPCInvoke.class, new IRequest() {
         }, new IResponse() {
@@ -39,6 +39,24 @@ class RPCApplicationTests {
             @Override
             public <P extends IPlugin> List<P> loader(Class<P> pluginInterface, ClassLoader classLoader) {
                 return (List<P>) beforeInvokes;
+            }
+        });
+    }
+
+    @Test
+    void testLoaderUnSort() {
+
+        InvokeChainManager.invoke(IRPCInvoke.class, new IRequest() {
+        }, new IResponse() {
+        }, new PluginsLoader.IPluginsLoader() {
+            @Override
+            public <P extends IPlugin> List<P> loader(Class<P> pluginInterface, ClassLoader classLoader) {
+                return (List<P>) beforeInvokes;
+            }
+
+            @Override
+            public boolean sort() {
+                return false;
             }
         });
     }

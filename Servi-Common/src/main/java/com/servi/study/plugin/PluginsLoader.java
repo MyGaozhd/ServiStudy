@@ -35,17 +35,34 @@ public class PluginsLoader {
         List<P> plugins = new ArrayList<>();
         plugins.addAll(pluginsLoader.loader(pluginInterface, classLoader));
 
-        plugins.sort(new Comparator<P>() {
-            @Override
-            public int compare(P p1, P p2) {
-                return p1.order() - p2.order();
-            }
-        });
+        if (pluginsLoader.sort()) {
+            plugins.sort(new Comparator<P>() {
+                @Override
+                public int compare(P p1, P p2) {
+                    return p1.order() - p2.order();
+                }
+            });
+        }
         return plugins;
     }
 
     @FunctionalInterface
     public interface IPluginsLoader {
+        /**
+         * @param pluginInterface 需要加载的接口
+         * @param classLoader     类加载器
+         * @param <P>
+         * @return
+         */
         <P extends IPlugin> List<P> loader(Class<P> pluginInterface, ClassLoader classLoader);
+
+        /**
+         * 加载完成后是否排序
+         *
+         * @return
+         */
+        default boolean sort() {
+            return true;
+        }
     }
 }
