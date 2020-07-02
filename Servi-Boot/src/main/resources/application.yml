@@ -1,5 +1,8 @@
 server:
   port: 8080
+  servlet:
+    #设置访问路径
+    context-path: /servi
 #指定默认加载的文件[application-dev.yml]
 spring:
   profiles:

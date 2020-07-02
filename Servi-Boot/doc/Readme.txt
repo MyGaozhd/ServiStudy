@@ -14,3 +14,11 @@ management:
       exposure:
         include:
           - '*'
+ 6、支持增加访问路径
+ server:
+   port: 8080
+   servlet:
+     #设置访问路径
+     context-path: /servi
+ 7、支持优先级目录
+ config\application.yml
