@@ -10,3 +10,9 @@ people:
   pets:
     - {name: 狗1, age: 1}
     - {name: 狗2, age: 2}
+management:
+  endpoints:
+    web:
+      exposure:
+        include:
+          - '*'
