@@ -15,8 +15,8 @@ public class BeforeInvokeChain_1 extends AbstractInvokeChain implements IBeforeI
 
     @Override
     public void excute(IRequest req, IResponse res) {
-        System.out.println(BeforeInvokeChain_1.class.getName() + "->" + req.getClass().toString());
-        System.out.println(BeforeInvokeChain_1.class.getName() + "->" + res.getClass().toString());
+        System.out.println(BeforeInvokeChain_1.class.getName() + "->" + order() + "->" + req.getClass().toString());
+        System.out.println(BeforeInvokeChain_1.class.getName() + "->" + order() + "->" + res.getClass().toString());
         if (next() != null) {
             next().excute(req, res);
         }

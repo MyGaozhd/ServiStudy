@@ -7,7 +7,6 @@ import java.util.List;
 
 /**
  * @author servi
- * @date 2020/6/29
  */
 public class InvokeChainManager {
 
@@ -23,6 +22,26 @@ public class InvokeChainManager {
      */
     public static <REQ, RES, P extends IInvokeChain<REQ, RES>> void invoke(Class<P> invokeChainInterface, REQ req, RES res) {
         List<P> chains = PluginsLoader.load(invokeChainInterface);
+        if (CollectionUtils.isEmpty(chains)) {
+            throw new RuntimeException("未找到对应调用链路");
+        } else {
+            chainBuilder(chains).excute(req, res);
+        }
+    }
+
+    /**
+     * 调用链执行
+     *
+     * @param invokeChainInterface
+     * @param req
+     * @param res
+     * @param pluginsLoader
+     * @param <REQ>
+     * @param <RES>
+     * @param <P>
+     */
+    public static <REQ, RES, P extends IInvokeChain<REQ, RES>> void invoke(Class<P> invokeChainInterface, REQ req, RES res, PluginsLoader.IPluginsLoader pluginsLoader) {
+        List<P> chains = PluginsLoader.load(invokeChainInterface, invokeChainInterface.getClassLoader(), pluginsLoader);
         if (CollectionUtils.isEmpty(chains)) {
             throw new RuntimeException("未找到对应调用链路");
         } else {

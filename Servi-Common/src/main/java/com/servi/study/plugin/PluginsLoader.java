@@ -7,7 +7,6 @@ import java.util.ServiceLoader;
 
 /**
  * @author servi
- * @date 2020/6/28
  */
 public class PluginsLoader {
 
@@ -22,13 +21,6 @@ public class PluginsLoader {
                     plugins.add(plugin);
                 });
 
-                plugins.sort(new Comparator<P>() {
-                    @Override
-                    public int compare(P p1, P p2) {
-                        return p1.order() - p2.order();
-                    }
-                });
-
                 return plugins;
             }
         });
@@ -40,7 +32,16 @@ public class PluginsLoader {
             throw new NullPointerException(" 插件加载器不能为空 ");
         }
 
-        return pluginsLoader.loader(pluginInterface, classLoader);
+        List<P> plugins = new ArrayList<>();
+        plugins.addAll(pluginsLoader.loader(pluginInterface, classLoader));
+
+        plugins.sort(new Comparator<P>() {
+            @Override
+            public int compare(P p1, P p2) {
+                return p1.order() - p2.order();
+            }
+        });
+        return plugins;
     }
 
     @FunctionalInterface
