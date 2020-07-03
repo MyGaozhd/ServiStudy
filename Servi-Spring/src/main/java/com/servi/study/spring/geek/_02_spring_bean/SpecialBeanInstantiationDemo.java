@@ -1,4 +1,4 @@
-package com.servi.study.spring.geek._02_spring_bean.definition;
+package com.servi.study.spring.geek._02_spring_bean;
 
 import com.servi.study.spring.geek._02_spring_bean.factory.DefaultUserFactory;
 import com.servi.study.spring.geek._02_spring_bean.factory.UserFactory;

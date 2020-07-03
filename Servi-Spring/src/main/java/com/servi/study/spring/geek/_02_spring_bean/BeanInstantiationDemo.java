@@ -1,4 +1,4 @@
-package com.servi.study.spring.geek._02_spring_bean.definition;
+package com.servi.study.spring.geek._02_spring_bean;
 
 import com.servi.study.spring.geek._01_ioc_container_overview.domain.User;
 import org.springframework.beans.factory.BeanFactory;

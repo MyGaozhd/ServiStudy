@@ -1,4 +1,4 @@
-package com.servi.study.spring.geek._02_spring_bean.definition;
+package com.servi.study.spring.geek._02_spring_bean;
 
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 

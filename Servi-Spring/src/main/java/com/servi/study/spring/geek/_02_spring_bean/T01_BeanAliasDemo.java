@@ -1,4 +1,4 @@
-package com.servi.study.spring.geek._02_spring_bean.definition;
+package com.servi.study.spring.geek._02_spring_bean;
 
  import com.servi.study.spring.geek._01_ioc_container_overview.domain.User;
 import org.springframework.beans.factory.BeanFactory;
@@ -8,9 +8,10 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
  * Bean 别名示例
  *
  * @author servi
+ * @see [bean-definitions-context.xml]-><alias name="user" alias="servi-user" />
  * @since
  */
-public class BeanAliasDemo {
+public class T01_BeanAliasDemo {
 
     public static void main(String[] args) {
         // 配置 XML 配置文件
