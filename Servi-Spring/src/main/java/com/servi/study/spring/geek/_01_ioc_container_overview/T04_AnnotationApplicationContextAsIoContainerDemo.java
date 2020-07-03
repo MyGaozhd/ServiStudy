@@ -1,4 +1,4 @@
-package com.servi.study.spring.geek._01_ioc_container_overview.container;
+package com.servi.study.spring.geek._01_ioc_container_overview;
 
 import com.servi.study.spring.geek._01_ioc_container_overview.domain.Company;
 import com.servi.study.spring.geek._01_ioc_container_overview.domain.User;
@@ -18,13 +18,13 @@ import java.util.Map;
  * @since
  */
 @Configuration
-public class AnnotationApplicationContextAsIoCContainerDemo {
+public class T04_AnnotationApplicationContextAsIoContainerDemo {
 
     public static void main(String[] args) {
         // 创建 BeanFactory 容器
         AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext();
         // 将当前类 AnnotationApplicationContextAsIoCContainerDemo 作为配置类（Configuration Class）
-        applicationContext.register(AnnotationApplicationContextAsIoCContainerDemo.class);
+        applicationContext.register(T04_AnnotationApplicationContextAsIoContainerDemo.class);
         //扫描包
         applicationContext.scan("com.servi.study.spring.geek.ioc_container_overview.container");
         // 启动应用上下文

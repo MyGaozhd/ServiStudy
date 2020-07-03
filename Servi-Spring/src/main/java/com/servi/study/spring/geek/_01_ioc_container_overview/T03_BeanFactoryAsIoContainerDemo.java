@@ -1,4 +1,4 @@
-package com.servi.study.spring.geek._01_ioc_container_overview.container;
+package com.servi.study.spring.geek._01_ioc_container_overview;
 
 import com.servi.study.spring.geek._01_ioc_container_overview.domain.User;
 import org.springframework.beans.factory.BeanFactory;
@@ -14,7 +14,7 @@ import java.util.Map;
  * @author servi
  * @since
  */
-public class BeanFactoryAsIoCContainerDemo {
+public class T03_BeanFactoryAsIoContainerDemo {
 
     public static void main(String[] args) {
         // 创建 BeanFactory 容器
@@ -36,5 +36,4 @@ public class BeanFactoryAsIoCContainerDemo {
             System.out.println("查找到的所有的 User 集合对象：" + users);
         }
     }
-
 }

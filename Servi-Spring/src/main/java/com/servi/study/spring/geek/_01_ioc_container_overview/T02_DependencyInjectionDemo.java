@@ -1,4 +1,4 @@
-package com.servi.study.spring.geek._01_ioc_container_overview.dependency.injection;
+package com.servi.study.spring.geek._01_ioc_container_overview;
 
 import com.servi.study.spring.geek._01_ioc_container_overview.repository.UserRepository;
 import org.springframework.beans.factory.ObjectFactory;
@@ -10,9 +10,10 @@ import org.springframework.core.env.Environment;
  * 依赖注入示例
  *
  * @author servi
+ * @see [dependency-injection-context.xml] - autowire="byType"
  * @since
  */
-public class DependencyInjectionDemo {
+public class T02_DependencyInjectionDemo {
 
     public static void main(String[] args) {
         // 配置 XML 配置文件
@@ -27,7 +28,7 @@ public class DependencyInjectionDemo {
 //        System.out.println(userRepository.getUsers());
 
         // 依赖来源二：依赖注入（內建依赖）
-        System.out.println(userRepository.getBeanFactory());
+        System.out.println("userRepository.getBeanFactory()->" + userRepository.getBeanFactory());
 
 
         ObjectFactory userFactory = userRepository.getObjectFactory();

@@ -1,4 +1,4 @@
-package com.servi.study.spring.geek._01_ioc_container_overview.dependency.lookup;
+package com.servi.study.spring.geek._01_ioc_container_overview;
 
 import com.servi.study.spring.geek._01_ioc_container_overview.annotation.Super;
 import com.servi.study.spring.geek._01_ioc_container_overview.domain.User;
@@ -16,7 +16,7 @@ import java.util.Map;
  * @author servi
  * @since
  */
-public class DependencyLookupDemo {
+public class T01_DependencyLookupDemo {
 
     public static void main(String[] args) {
         // 配置 XML 配置文件
