@@ -54,6 +54,7 @@ public class T04_AnnotationApplicationContextAsIoContainerDemo {
             Map<String, User> users = listableBeanFactory.getBeansOfType(User.class);
             System.out.println("查找到的所有的 User 集合对象：" + users);
 
+            //没有扫描此包，会报错
             System.out.println("查找到的所有的 Company 对象：" + listableBeanFactory.getBean(Company.class));
         }
     }
