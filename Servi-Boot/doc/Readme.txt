@@ -28,3 +28,11 @@ com.servi.study.boot.config.servlet.ServiServletConfiguration
 com.servi.study.boot.config.filter.ServiFilterConfiguration
 10、注册ServletContextListener
 com.servi.study.boot.config.servlet.ServiServletConfiguration
+11、logback日志格式修改
+logback-spring.xml
+            <springProfile name="!dev">
+                <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} ----> [%thread] ---> %-5level %logger{50} - %msg%n</pattern>
+            </springProfile>
+            <springProfile name="dev">
+                <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} -> [%thread] -> %-5level %logger{50} - %msg%n</pattern>
+            </springProfile>
