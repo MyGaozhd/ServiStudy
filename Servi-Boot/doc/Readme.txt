@@ -36,3 +36,7 @@ logback-spring.xml
             <springProfile name="dev">
                 <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} -> [%thread] -> %-5level %logger{50} - %msg%n</pattern>
             </springProfile>
+12、自动执行数据库建库脚本
+DataSourceInitializer.initSchema->isEnabled->isEmbedded()->
+EmbeddedDatabaseConnection.IsEmbedded.doInConnection(回调方法)
+->EmbeddedDatabaseConnection.values() 枚举里面不包括mysql

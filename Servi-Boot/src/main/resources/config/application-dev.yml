@@ -10,8 +10,11 @@ people:
   pets:
     - {name: 狗1, age: 1}
     - {name: 狗2, age: 2}
+# -下面的配置不会生效，因为只有内存数据库才会自动执行数据库脚本-
 spring:
   datasource:
     username: root
     password: 123456a
-    url: jdbc:mysql://127.0.0.1:3306/mysql?serverTimezone=Asia/Shanghai
+    url: jdbc:mysql://127.0.0.1:3306/servi-db?serverTimezone=Asia/Shanghai
+    schema:
+      - 'classpath:schema\schema.sql'
