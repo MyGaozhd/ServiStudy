@@ -40,3 +40,5 @@ logback-spring.xml
 DataSourceInitializer.initSchema->isEnabled->isEmbedded()->
 EmbeddedDatabaseConnection.IsEmbedded.doInConnection(回调方法)
 ->EmbeddedDatabaseConnection.values() 枚举里面不包括mysql
+13、集成阿里巴巴druid数据源
+http://localhost:8081/servi/druid/index.html
