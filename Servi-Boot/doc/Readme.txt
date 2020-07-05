@@ -42,3 +42,7 @@ EmbeddedDatabaseConnection.IsEmbedded.doInConnection(回调方法)
 ->EmbeddedDatabaseConnection.values() 枚举里面不包括mysql
 13、集成阿里巴巴druid数据源
 http://localhost:8081/servi/druid/index.html
+14、增加mybatis支持
+C04_Controller
+15、增加jpa支持
+C05Controller

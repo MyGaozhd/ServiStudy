@@ -29,3 +29,11 @@ spring:
       test-on-borrow: true
       test-on-return: true
       test-while-idle: true
+  jpa:
+    hibernate:
+      ddl-auto: 'create-drop'
+    properties:
+      hibernate:
+        format_sql: true
+        show_sql: true
+
