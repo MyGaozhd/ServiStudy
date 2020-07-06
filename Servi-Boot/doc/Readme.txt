@@ -55,4 +55,5 @@ com.servi.study.boot.listener.ServiCommandLineRunner
 com.servi.study.boot.controller.C06_Controller
 [org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
  com.servi.study.start.autoconfigure.ServiServiceAutoConfiguration]
-
+18、增加缓存使用方式
+com.servi.study.boot.controller.C04_Controller.getOneUser

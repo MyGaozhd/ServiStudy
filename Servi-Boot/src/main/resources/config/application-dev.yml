@@ -40,3 +40,7 @@ servi:
   fix:
     prefix: prefix-servi
     suffix: suffix-servi
+# mybatis 自动驼峰命名
+mybatis:
+  configuration:
+    map-underscore-to-camel-case: true

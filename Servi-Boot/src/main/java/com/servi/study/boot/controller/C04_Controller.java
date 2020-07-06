@@ -3,6 +3,7 @@ package com.servi.study.boot.controller;
 import com.servi.study.boot.bean.User;
 import com.servi.study.boot.mapper.UserMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -20,7 +21,9 @@ public class C04_Controller {
     }
 
     @RequestMapping("/oneuser/{id}")
+    @Cacheable(cacheNames = "userCache", key = "#id")
     public User getOneUser(@PathVariable String id) {
+        System.out.println(" 查询user " + id);
         return userMapper.getUserById(id);
     }
 

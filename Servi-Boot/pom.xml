@@ -81,10 +81,17 @@
             <version>6.0.1.GA</version>
         </dependency>
 
+        <!--自定义starter-->
         <dependency>
             <groupId>com.servi.study</groupId>
             <artifactId>servi-spring-boot-starter</artifactId>
             <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+
+        <!--缓存-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-cache</artifactId>
         </dependency>
     </dependencies>
 </project>
