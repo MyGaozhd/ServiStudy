@@ -46,3 +46,8 @@ http://localhost:8081/servi/druid/index.html
 C04_Controller
 15、增加jpa支持
 C05Controller
+16、增加监听器
+com.servi.study.boot.listener.ServiApplicationContextInitializer
+com.servi.study.boot.listener.ServiSpringApplicationRunListener
+com.servi.study.boot.listener.ServiApplicationRunner
+com.servi.study.boot.listener.ServiCommandLineRunner
