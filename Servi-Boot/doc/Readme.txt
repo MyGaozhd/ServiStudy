@@ -51,3 +51,8 @@ com.servi.study.boot.listener.ServiApplicationContextInitializer
 com.servi.study.boot.listener.ServiSpringApplicationRunListener
 com.servi.study.boot.listener.ServiApplicationRunner
 com.servi.study.boot.listener.ServiCommandLineRunner
+17、增加spring-boot-starter demo 实现
+com.servi.study.boot.controller.C06_Controller
+[org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+ com.servi.study.start.autoconfigure.ServiServiceAutoConfiguration]
+
