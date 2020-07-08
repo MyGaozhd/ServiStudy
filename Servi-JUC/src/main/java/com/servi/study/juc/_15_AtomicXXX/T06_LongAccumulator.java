@@ -1,3 +1,7 @@
+/**
+ * Accumulator 和 Adder 非常相似，实际上 Accumulator 就是一个更通用版本的 Adder，
+ * 因为 LongAdder 的 API 只有对数值的加减，而 LongAccumulator 提供了自定义的函数操作。
+ */
 package com.servi.study.juc._15_AtomicXXX;
 
 import java.util.concurrent.ExecutorService;
