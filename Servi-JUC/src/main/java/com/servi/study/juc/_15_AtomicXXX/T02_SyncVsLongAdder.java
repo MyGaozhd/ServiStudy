@@ -6,7 +6,7 @@ import java.util.concurrent.atomic.LongAdder;
  * LongAdder: 50000000 time 161
  * Sync: 50000000 time 2255
  */
-public class T03_SyncVsLongAdder {
+public class T02_SyncVsLongAdder {
     static long count2 = 0L;
     static LongAdder count = new LongAdder();
 
