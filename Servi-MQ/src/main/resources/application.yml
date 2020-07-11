@@ -1,0 +1,3 @@
+spring:
+  rabbitmq:
+    host: 10.6.195.250

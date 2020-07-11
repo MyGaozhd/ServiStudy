@@ -1,4 +1,4 @@
-package com.servi.study.mq.rabbit.connect;
+package com.servi.study.mq.rabbit._01.connect;
 
 import com.rabbitmq.client.Connection;
 import com.rabbitmq.client.ConnectionFactory;
@@ -7,7 +7,7 @@ public class IConnect {
 
     private static IConnect INSTANCE = new IConnect();
 
-    private static final String IP = "127.0.0.1";
+    private static final String IP = "10.6.195.250";
     private static final int port = 5672;
     private Connection connection = null;
 

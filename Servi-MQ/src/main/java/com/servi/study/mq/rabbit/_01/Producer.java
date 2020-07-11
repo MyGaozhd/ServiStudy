@@ -1,4 +1,4 @@
-package com.servi.study.mq.rabbit;
+package com.servi.study.mq.rabbit._01;
 
 import com.rabbitmq.client.Channel;
 import com.rabbitmq.client.Connection;
@@ -14,7 +14,7 @@ public class Producer {
     private static final String ROUTING_KEY = "routingkey_demo";
     private static final String QUEUE_NAME = "queue_demo";
 
-    private static final String IP = "127.0.0.1";
+    private static final String IP = "10.6.195.250";
     private static final int port = 5672;
 
     public static void main(String[] args) throws IOException, TimeoutException {
@@ -23,8 +23,8 @@ public class Producer {
         factory.setHost(IP);
         factory.setPort(port);
 
-        factory.setUsername("servi");
-        factory.setPassword("servi");
+        factory.setUsername("guest");
+        factory.setPassword("guest");
         Connection connection = factory.newConnection();
         Channel channel = connection.createChannel();
         channel.exchangeDeclare(EXCHANGE_NAME, "direct", true, false, null);

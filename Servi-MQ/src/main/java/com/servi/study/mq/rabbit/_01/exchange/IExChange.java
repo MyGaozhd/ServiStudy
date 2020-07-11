@@ -1,4 +1,4 @@
-package com.servi.study.mq.rabbit.exchange;
+package com.servi.study.mq.rabbit._01.exchange;
 
 import com.rabbitmq.client.Channel;
 

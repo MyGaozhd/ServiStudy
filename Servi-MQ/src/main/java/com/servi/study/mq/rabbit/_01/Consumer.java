@@ -1,4 +1,4 @@
-package com.servi.study.mq.rabbit;
+package com.servi.study.mq.rabbit._01;
 
 import com.rabbitmq.client.*;
 
@@ -12,7 +12,7 @@ public class Consumer {
     private static final String ROUTING_KEY = "routingkey_demo";
     private static final String QUEUE_NAME = "queue_demo";
 
-    private static final String IP = "127.0.0.1";
+    private static final String IP = "10.6.195.250";
     private static final int port = 5672;
 
     public static void main(String[] args) throws IOException, TimeoutException, InterruptedException {
@@ -21,8 +21,8 @@ public class Consumer {
 
         ConnectionFactory factory = new ConnectionFactory();
 
-        factory.setUsername("servi");
-        factory.setPassword("servi");
+        factory.setUsername("guest");
+        factory.setPassword("guest");
         Connection connection = factory.newConnection(addresses);
 
 

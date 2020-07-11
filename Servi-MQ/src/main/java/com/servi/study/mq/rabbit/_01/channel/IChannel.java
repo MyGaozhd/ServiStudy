@@ -1,7 +1,7 @@
-package com.servi.study.mq.rabbit.channel;
+package com.servi.study.mq.rabbit._01.channel;
 
 import com.rabbitmq.client.Channel;
-import com.servi.study.mq.rabbit.connect.IConnect;
+import com.servi.study.mq.rabbit._01.connect.IConnect;
 
 import java.io.IOException;
 

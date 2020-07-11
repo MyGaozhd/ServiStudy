@@ -1,9 +1,9 @@
-package com.servi.study.mq.rabbit.oneExMuiltQueue;
+package com.servi.study.mq.rabbit._01.oneExMuiltQueue;
 
 import com.rabbitmq.client.Channel;
 import com.rabbitmq.client.MessageProperties;
-import com.servi.study.mq.rabbit.channel.IChannel;
-import com.servi.study.mq.rabbit.connect.IConnect;
+import com.servi.study.mq.rabbit._01.channel.IChannel;
+import com.servi.study.mq.rabbit._01.connect.IConnect;
 
 import java.io.IOException;
 import java.util.concurrent.TimeoutException;
