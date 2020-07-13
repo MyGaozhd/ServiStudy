@@ -62,6 +62,7 @@ public class T07_DelayQueue {
 		
 		for(int i=0; i<5; i++) {
 			System.out.println(tasks.take());
+			System.out.println(tasks.poll());
 		}
 	}
 }
