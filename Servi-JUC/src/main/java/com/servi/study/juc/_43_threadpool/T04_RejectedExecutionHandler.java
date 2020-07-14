@@ -32,7 +32,7 @@ public class T04_RejectedExecutionHandler {
          *     当新任务被提交后直接被丢弃掉，也不会给你任何的通知，相对而言存在一定的风险，
          *     因为我们提交的时候根本不知道这个任务会被丢弃，可能造成数据丢失。
          */
-        RejectedExecutionHandler rejectedExecutionHandler2 = new ThreadPoolExecutor.DiscardOldestPolicy();
+        RejectedExecutionHandler rejectedExecutionHandler2 = new ThreadPoolExecutor.DiscardPolicy();
         /**
          * 三、DiscardOldestPolicy
          *    如果线程池没被关闭且没有能力执行，则会丢弃任务队列中的头结点，通常是存活时间最长的任务，

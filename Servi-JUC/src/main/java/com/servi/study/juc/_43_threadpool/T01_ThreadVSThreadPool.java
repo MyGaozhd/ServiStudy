@@ -67,6 +67,6 @@ public class T01_ThreadVSThreadPool implements Runnable {
         System.out.println(end2 - start2);
 
         //已完成的任务数量
-        //System.out.println(((ThreadPoolExecutor) service).getCompletedTaskCount());
+        System.out.println(((ThreadPoolExecutor) service).getCompletedTaskCount());
     }
 }
