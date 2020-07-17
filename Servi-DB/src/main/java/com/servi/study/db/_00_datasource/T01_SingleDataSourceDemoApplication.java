@@ -29,8 +29,8 @@ public class T01_SingleDataSourceDemoApplication implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        showConnection();
-        showData();
+//        showConnection();
+//        showData();
     }
 
     private void showConnection() throws SQLException {
