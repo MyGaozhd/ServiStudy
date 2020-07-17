@@ -32,8 +32,9 @@ public class T02_ShowAllUsedTables implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        showConnection();
-        showData();
+        //使用oracle放开
+       // showConnection();
+        //showData();
     }
 
     private void showConnection() throws SQLException {
