@@ -1,4 +1,4 @@
-package com.servi.study.aop._01_jdk_proxy;
+package com.servi.study.aop._00_target;
 
 /**
  * @author servi

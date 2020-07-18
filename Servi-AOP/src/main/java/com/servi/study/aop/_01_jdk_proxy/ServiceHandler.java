@@ -1,5 +1,7 @@
 package com.servi.study.aop._01_jdk_proxy;
 
+import com.servi.study.aop._00_target.IService;
+
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
 

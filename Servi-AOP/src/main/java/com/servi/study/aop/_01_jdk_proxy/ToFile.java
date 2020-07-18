@@ -1,5 +1,6 @@
 package com.servi.study.aop._01_jdk_proxy;
 
+import com.servi.study.aop._00_target.IService;
 import sun.misc.ProxyGenerator;
 
 import java.io.FileOutputStream;
