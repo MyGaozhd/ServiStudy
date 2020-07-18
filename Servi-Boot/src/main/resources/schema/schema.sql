@@ -1,4 +1,4 @@
-CREATE TABLE `servi-db`.`user` (
+CREATE TABLE `user` (
 	id INT auto_increment NOT null primary key,
 	name varchar(20) NULL,
 	sex CHAR NULL,

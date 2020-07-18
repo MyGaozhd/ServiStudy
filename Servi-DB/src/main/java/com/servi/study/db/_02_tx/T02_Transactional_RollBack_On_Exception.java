@@ -7,6 +7,9 @@ import org.springframework.transaction.annotation.Transactional;
 
 import javax.sql.DataSource;
 
+/**
+ * 正常开启一个事务且抛出异常
+ */
 @Component
 public class T02_Transactional_RollBack_On_Exception {
     @Autowired
@@ -17,8 +20,8 @@ public class T02_Transactional_RollBack_On_Exception {
 
     @Transactional
     public void insert() {
-        String sql = "INSERT INTO `servi-db`.`user` (name,sex,age) VALUES (?,?,?)";
-        int count = jdbcTemplate.update(sql, new Object[]{"servi-00", "男", 22});
+        String sql = "INSERT INTO `user` (name,sex,age) VALUES (?,?,?)";
+        int count = jdbcTemplate.update(sql, new Object[]{"servi-t02", "男", 22});
 
         System.out.println("insert->" + count);
 
