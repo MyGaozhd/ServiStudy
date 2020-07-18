@@ -3,6 +3,7 @@ package com.servi.study.db._02_tx;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Component;
+import org.springframework.transaction.annotation.Transactional;
 
 /**
  * @author servi
@@ -14,6 +15,7 @@ public class T10_ParentMethodOnTx_OneChildMethodThrowExceptionAndCachedBySelf_Tw
     @Autowired
     Child child;
 
+    @Transactional
     public void insert() {
 
         child.method1();

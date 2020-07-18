@@ -27,6 +27,12 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
  * 【两个都不回滚】
  * @see T10_ParentMethodOnTx_OneChildMethodThrowExceptionAndCachedBySelf_TwoChildNoTx
  * 【两个都不回滚】
+ * @see T11_ParentMethodNoTx_TwoChildMethod_RequiresNew
+ * [两个都不回滚]
+ * @see T12_ParentMethodNoTx_OneChildMethodThrowExceptionAndNoCached_RequiresNew
+ * [child1 不回滚 child2 回滚]
+ * @see T13_ParentMethodNoTx_OneChildMethodThrowExceptionAndCachedBySelf_RequiresNew
+ * 【两个都不回滚】
  */
 @SpringBootApplication
 @EnableTransactionManagement
@@ -62,6 +68,15 @@ public class ServiTXApplication implements CommandLineRunner {
     @Autowired
     T10_ParentMethodOnTx_OneChildMethodThrowExceptionAndCachedBySelf_TwoChildNoTx t10_parentMethodOnTx_oneChildMethodThrowExceptionAndCachedBySelf_twoChildNoTx;
 
+    @Autowired
+    T11_ParentMethodNoTx_TwoChildMethod_RequiresNew t11_parentMethodNoTx_twoChildMethod_requiresNew;
+
+    @Autowired
+    T12_ParentMethodNoTx_OneChildMethodThrowExceptionAndNoCached_RequiresNew t12_parentMethodNoTx_oneChildMethodThrowExceptionAndNoCached_requiresNew;
+
+    @Autowired
+    T13_ParentMethodNoTx_OneChildMethodThrowExceptionAndCachedBySelf_RequiresNew t13_parentMethodNoTx_oneChildMethodThrowExceptionAndCachedBySelf_requiresNew;
+
     public static void main(String[] args) {
         SpringApplication.run(ServiTXApplication.class, args);
     }
@@ -70,15 +85,18 @@ public class ServiTXApplication implements CommandLineRunner {
     public void run(String... args) throws Exception {
 
 //        t01_transactional_normal.insert();
-        //t02_transactional_rollBack_on_exception.insert();
-        //t03_parentMethodNoTx_twoChildMethodNoException.insert();
-        //t04_parentMethodNoTx_oneChildMethodThrowException.insert();
+//        t02_transactional_rollBack_on_exception.insert();
+//        t03_parentMethodNoTx_twoChildMethodNoException.insert();
+//        t04_parentMethodNoTx_oneChildMethodThrowException.insert();
 //        t05_parentMethodOnTx_twoChildMethodNoException.insert();
 //        t06_parentMethodOnTx_oneChildMethodThrowExceptionAndNoCached.insert();
 //        t07_parentMethodOnTx_oneChildMethodThrowExceptionAndCachedByParent.insert();
 //        t08_parentMethodOnTx_oneChildMethodThrowExceptionAndCachedByParent_twoChildNoTx.insert();
 //        t09_parentMethodOnTx_oneChildMethodThrowExceptionAndCachedBySelf.insert();
-        t10_parentMethodOnTx_oneChildMethodThrowExceptionAndCachedBySelf_twoChildNoTx.insert();
+//        t10_parentMethodOnTx_oneChildMethodThrowExceptionAndCachedBySelf_twoChildNoTx.insert();
+//        t11_parentMethodNoTx_twoChildMethod_requiresNew.insert();
+//        t12_parentMethodNoTx_oneChildMethodThrowExceptionAndNoCached_requiresNew.insert();
+//        t13_parentMethodNoTx_oneChildMethodThrowExceptionAndCachedBySelf_requiresNew.insert();
     }
 
 
