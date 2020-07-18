@@ -3,7 +3,6 @@ package com.servi.study.db._02_tx;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Component;
-import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 /**
@@ -11,15 +10,20 @@ import org.springframework.transaction.annotation.Transactional;
  * @date 2020/7/18
  */
 @Component
-public class T04_ParentMethodNoTx_OneChildMethodThrowException {
+public class T08_ParentMethodOnTx_OneChildMethodThrowExceptionAndCachedByParent_TwoChildNoTx {
 
     @Autowired
     Child child;
 
+    @Transactional
     public void insert() {
 
         child.method1();
-        child.method2();
+        try {
+            child.method2();
+        } catch (Exception e) {
+
+        }
     }
 
     @Component
@@ -30,19 +34,18 @@ public class T04_ParentMethodNoTx_OneChildMethodThrowException {
         @Autowired
         JdbcTemplate jdbcTemplate;
 
-        @Transactional(propagation = Propagation.REQUIRED)
         public void method1() {
 
-            int count = jdbcTemplate.update(sql, new Object[]{"servi-t04-1", "男", 22});
+            int count = jdbcTemplate.update(sql, new Object[]{"servi-t08-1", "男", 22});
             System.out.println("insert->" + count);
         }
 
-        @Transactional(propagation = Propagation.REQUIRED)
         public void method2() {
-            int count = jdbcTemplate.update(sql, new Object[]{"servi-t04-2", "男", 22});
+            int count = jdbcTemplate.update(sql, new Object[]{"servi-t08-2", "男", 22});
             System.out.println("insert->" + count);
             //方法二 抛出异常
             throw new RuntimeException();
+
         }
     }
 }
