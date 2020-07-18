@@ -33,6 +33,20 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
  * [child1 不回滚 child2 回滚]
  * @see T13_ParentMethodNoTx_OneChildMethodThrowExceptionAndCachedBySelf_RequiresNew
  * 【两个都不回滚】
+ * @see T14_ParentMethodOnTx_TwoChildMethod_RequiresNew
+ * 【两个都不回滚】
+ * @see T15_ParentMethodOnTx_OneChildMethodThrowExceptionAndNoCached_RequiresNew
+ * 【child2回滚】
+ * @see T16_ParentMethodOnTx_OneChildMethodThrowExceptionAndCachedBySelf_RequiresNew
+ * 【两个都不回滚】
+ * @see T17_ParentMethodOnTx_OneChildMethodThrowExceptionAndCachedByParent_RequiresNew
+ * 【child2回滚】
+ * @see T18_ParentMethodNoTx_TwoChildMethod_Nested
+ * 【两个都不回滚】
+ * @see T19_ParentMethodNoTx_OneChildMethodThrowExceptionAndNoCached_Nested
+ * 【child2回滚】
+ * @see T20_ParentMethodNoTx_OneChildMethodThrowExceptionAndCachedBySelf_Nested
+ * 【两个都不回滚】
  */
 @SpringBootApplication
 @EnableTransactionManagement
@@ -77,6 +91,27 @@ public class ServiTXApplication implements CommandLineRunner {
     @Autowired
     T13_ParentMethodNoTx_OneChildMethodThrowExceptionAndCachedBySelf_RequiresNew t13_parentMethodNoTx_oneChildMethodThrowExceptionAndCachedBySelf_requiresNew;
 
+    @Autowired
+    T14_ParentMethodOnTx_TwoChildMethod_RequiresNew t14_parentMethodOnTx_twoChildMethod_requiresNew;
+
+    @Autowired
+    T15_ParentMethodOnTx_OneChildMethodThrowExceptionAndNoCached_RequiresNew t15_parentMethodOnTx_oneChildMethodThrowExceptionAndNoCached_requiresNew;
+
+    @Autowired
+    T16_ParentMethodOnTx_OneChildMethodThrowExceptionAndCachedBySelf_RequiresNew t16_parentMethodNoTx_oneChildMethodThrowExceptionAndCachedBySelf_requiresNew;
+
+    @Autowired
+    T17_ParentMethodOnTx_OneChildMethodThrowExceptionAndCachedByParent_RequiresNew t17_parentMethodNoTx_oneChildMethodThrowExceptionAndCachedByParent_requiresNew;
+
+    @Autowired
+    T18_ParentMethodNoTx_TwoChildMethod_Nested t18_parentMethodNoTx_twoChildMethod_nested;
+
+    @Autowired
+    T19_ParentMethodNoTx_OneChildMethodThrowExceptionAndNoCached_Nested t19_parentMethodNoTx_oneChildMethodThrowExceptionAndNoCached_nested;
+
+    @Autowired
+    T20_ParentMethodNoTx_OneChildMethodThrowExceptionAndCachedBySelf_Nested t20_parentMethodNoTx_oneChildMethodThrowExceptionAndCachedBySelf_nested;
+
     public static void main(String[] args) {
         SpringApplication.run(ServiTXApplication.class, args);
     }
@@ -97,6 +132,13 @@ public class ServiTXApplication implements CommandLineRunner {
 //        t11_parentMethodNoTx_twoChildMethod_requiresNew.insert();
 //        t12_parentMethodNoTx_oneChildMethodThrowExceptionAndNoCached_requiresNew.insert();
 //        t13_parentMethodNoTx_oneChildMethodThrowExceptionAndCachedBySelf_requiresNew.insert();
+//        t14_parentMethodOnTx_twoChildMethod_requiresNew.insert();
+//        t15_parentMethodOnTx_oneChildMethodThrowExceptionAndNoCached_requiresNew.insert();
+//        t16_parentMethodNoTx_oneChildMethodThrowExceptionAndCachedBySelf_requiresNew.insert();
+//        t17_parentMethodNoTx_oneChildMethodThrowExceptionAndCachedByParent_requiresNew.insert();
+//        t18_parentMethodNoTx_twoChildMethod_nested.insert();
+//        t19_parentMethodNoTx_oneChildMethodThrowExceptionAndNoCached_nested.insert();
+        t20_parentMethodNoTx_oneChildMethodThrowExceptionAndCachedBySelf_nested.insert();
     }
 
 
