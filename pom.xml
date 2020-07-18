@@ -41,6 +41,7 @@
         <module>servi-rpc</module>
         <module>servi-db</module>
         <module>servi-boot</module>
+        <module>servi-aop</module>
     </modules>
 
     <repositories>
