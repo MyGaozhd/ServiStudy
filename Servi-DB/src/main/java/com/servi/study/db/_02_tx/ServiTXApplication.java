@@ -8,7 +8,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 @SpringBootApplication
 @EnableTransactionManagement
-public class T00_TX_Test implements CommandLineRunner {
+public class ServiTXApplication implements CommandLineRunner {
 
     @Autowired
     T01_Transactional_Normal t01_transactional_normal;
@@ -17,7 +17,7 @@ public class T00_TX_Test implements CommandLineRunner {
     T02_Transactional_RollBack_On_Exception t02_transactional_rollBack_on_exception;
 
     public static void main(String[] args) {
-        SpringApplication.run(T00_TX_Test.class, args);
+        SpringApplication.run(ServiTXApplication.class, args);
     }
 
     @Override
