@@ -10,12 +10,12 @@
 #spring.datasource.hikari.maxLifetime=1800000
 
 # oracle 数据源配置
-#spring:
-#  jpa:
-#    database: oracle
-#    show-sql: true
-#  datasource:
-#    driver-class-name: oracle.jdbc.driver.OracleDriver
-#    url: jdbc:oracle:thin:@10.16.1.45:1521:orcl
-#    username: NCC_HSSN
-#    password: 1
+spring:
+  jpa:
+    database: oracle
+    show-sql: true
+  datasource:
+    driver-class-name: oracle.jdbc.driver.OracleDriver
+    url: jdbc:oracle:thin:@10.16.1.45:1521:orcl
+    username: NCC_HSSN
+    password: 1
