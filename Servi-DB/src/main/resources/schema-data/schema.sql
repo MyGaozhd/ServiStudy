@@ -5,6 +5,7 @@ CREATE TABLE FOO (ID INT IDENTITY, BAR VARCHAR(64));
 
 CREATE TABLE `user_0` (
   `id` int(20) NOT NULL AUTO_INCREMENT,
+  `id` int(20) NOT NULL AUTO_INCREMENT,
   `name` varchar(20) DEFAULT NULL,
   `sex` char(1) DEFAULT NULL,
   `age` int(11) DEFAULT NULL,

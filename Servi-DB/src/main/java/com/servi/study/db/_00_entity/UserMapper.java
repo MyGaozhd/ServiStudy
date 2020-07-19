@@ -10,10 +10,10 @@ public interface UserMapper {
     @Select("select * from user ")
     public List<User> getAllUser();
 
-    @Select("select * from user where id =${id}")
-    public User getUserById(String id);
+    @Select("select * from user where userid =${id}")
+    public User getUserByUserId(String userid);
 
-    @Insert("insert into user(name,sex,age) values (#{name},#{sex},#{age})")
+    @Insert("insert into user(userid,name,sex,age) values (#{userid},#{name},#{sex},#{age})")
     @Options(useGeneratedKeys = true)
     public void insertUser(User user);
 
