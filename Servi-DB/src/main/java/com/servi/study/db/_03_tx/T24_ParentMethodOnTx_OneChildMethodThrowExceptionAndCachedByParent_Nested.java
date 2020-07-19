@@ -1,4 +1,4 @@
-package com.servi.study.db._02_tx;
+package com.servi.study.db._03_tx;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -11,14 +11,18 @@ import org.springframework.transaction.annotation.Transactional;
  * @date 2020/7/18
  */
 @Component
-public class T20_ParentMethodNoTx_OneChildMethodThrowExceptionAndCachedBySelf_Nested {
+public class T24_ParentMethodOnTx_OneChildMethodThrowExceptionAndCachedByParent_Nested {
 
     @Autowired
     Child child;
 
+    @Transactional
     public void insert() {
         child.method1();
-        child.method2();
+        try {
+            child.method2();
+        } catch (Exception e) {
+        }
     }
 
     @Component
@@ -32,19 +36,16 @@ public class T20_ParentMethodNoTx_OneChildMethodThrowExceptionAndCachedBySelf_Ne
         @Transactional(propagation = Propagation.NESTED)
         public void method1() {
 
-            int count = jdbcTemplate.update(sql, new Object[]{"servi-t20-1", "男", 22});
+            int count = jdbcTemplate.update(sql, new Object[]{"servi-t24-1", "男", 22});
             System.out.println("insert->" + count);
         }
 
         @Transactional(propagation = Propagation.NESTED)
         public void method2() {
-            int count = jdbcTemplate.update(sql, new Object[]{"servi-t20-2", "男", 22});
+            int count = jdbcTemplate.update(sql, new Object[]{"servi-t24-2", "男", 22});
             System.out.println("insert->" + count);
             //方法二 抛出异常
-            try {
-                throw new RuntimeException();
-            } catch (Exception e) {
-            }
+            throw new RuntimeException();
         }
     }
 }

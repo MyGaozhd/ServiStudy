@@ -1,14 +1,10 @@
-package com.servi.study.db._02_tx;
+package com.servi.study.db._03_tx;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.annotation.Bean;
-import org.springframework.transaction.SavepointManager;
-import org.springframework.transaction.TransactionException;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
-import org.springframework.transaction.support.SimpleTransactionStatus;
 
 /**
  * @see T01_Transactional_Normal 正常开启一个事务且没有异常

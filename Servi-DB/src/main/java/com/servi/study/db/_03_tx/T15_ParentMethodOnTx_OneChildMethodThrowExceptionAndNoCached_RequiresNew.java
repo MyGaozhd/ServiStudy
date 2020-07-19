@@ -1,8 +1,9 @@
-package com.servi.study.db._02_tx;
+package com.servi.study.db._03_tx;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Component;
+import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 /**
@@ -10,14 +11,13 @@ import org.springframework.transaction.annotation.Transactional;
  * @date 2020/7/18
  */
 @Component
-public class T10_ParentMethodOnTx_OneChildMethodThrowExceptionAndCachedBySelf_TwoChildNoTx {
+public class T15_ParentMethodOnTx_OneChildMethodThrowExceptionAndNoCached_RequiresNew {
 
     @Autowired
     Child child;
 
     @Transactional
     public void insert() {
-
         child.method1();
         child.method2();
     }
@@ -30,21 +30,20 @@ public class T10_ParentMethodOnTx_OneChildMethodThrowExceptionAndCachedBySelf_Tw
         @Autowired
         JdbcTemplate jdbcTemplate;
 
+        @Transactional(propagation = Propagation.REQUIRES_NEW)
         public void method1() {
 
-            int count = jdbcTemplate.update(sql, new Object[]{"servi-t10-1", "男", 22});
+            int count = jdbcTemplate.update(sql, new Object[]{"servi-t15-1", "男", 22});
             System.out.println("insert->" + count);
         }
 
+        @Transactional(propagation = Propagation.REQUIRES_NEW)
         public void method2() {
-            int count = jdbcTemplate.update(sql, new Object[]{"servi-t10-2", "男", 22});
-            System.out.println("insert->" + count);
-            try {
-                //方法二 抛出异常
-                throw new RuntimeException();
-            } catch (Exception e) {
 
-            }
+            int count = jdbcTemplate.update(sql, new Object[]{"servi-t15-2", "男", 22});
+            System.out.println("insert->" + count);
+            //方法二 抛出异常
+            throw new RuntimeException();
         }
     }
 }

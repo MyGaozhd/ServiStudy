@@ -1,4 +1,4 @@
-package com.servi.study.db._02_tx;
+package com.servi.study.db._03_tx;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;

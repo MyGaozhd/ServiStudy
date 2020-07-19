@@ -1,4 +1,4 @@
-package com.servi.study.db._00_datasource;
+package com.servi.study.db._01_datasource;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.CommandLineRunner;
