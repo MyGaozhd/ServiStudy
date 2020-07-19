@@ -7,13 +7,13 @@ import java.util.List;
 @Mapper
 public interface UserMapper {
 
-    @Select("select * from user ")
+    @Select("select * from user order by user_id asc")
     public List<User> getAllUser();
 
-    @Select("select * from user where userid =${id}")
-    public User getUserByUserId(String userid);
+    @Select("select * from user where user_id =${user_id}")
+    public User getUserByUserId(String user_id);
 
-    @Insert("insert into user(userid,name,sex,age) values (#{userid},#{name},#{sex},#{age})")
+    @Insert("insert into user(user_id,name,sex,age) values (#{user_id},#{name},#{sex},#{age})")
     @Options(useGeneratedKeys = true)
     public void insertUser(User user);
 

@@ -17,7 +17,7 @@ public class T01_ShardingTable {
             User user = new User();
             user.setName("servi-sharding-" + i);
             user.setAge(20);
-            user.setUserid(i);
+            user.setUser_id(i);
             user.setSex("男");
             userMapper.insertUser(user);
         }
