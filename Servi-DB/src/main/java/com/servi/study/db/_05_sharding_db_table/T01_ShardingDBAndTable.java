@@ -15,7 +15,7 @@ public class T01_ShardingDBAndTable {
     public void insert() {
         for (int i = 0; i < 10; i++) {
             User user = new User();
-            user.setName("servi-sharding-" + i);
+            user.setName("servi-dbtable-" + i);
             user.setAge(20);
             user.setUser_id(i);
             user.setSex("男");
