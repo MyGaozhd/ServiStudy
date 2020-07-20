@@ -1,4 +1,4 @@
 #指定默认加载的文件[application-[sharding].yml]
 spring:
   profiles:
-    active: shardingcommontable
+    active: shardingreadwrite
