@@ -19,3 +19,10 @@ CREATE TABLE `user_1` (
   `age` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=31 DEFAULT CHARSET=utf8;
+
+CREATE TABLE `org_orgs` (
+  `id` double NOT NULL AUTO_INCREMENT,
+  `code` varchar(20) DEFAULT NULL,
+  `name` varchar(20) DEFAULT null,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=31 DEFAULT CHARSET=utf8;
