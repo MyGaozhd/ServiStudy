@@ -1,6 +1,5 @@
 package com.servi.study.aop._03_InstantiationAwareBeanPostProcessor;
 
-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.stereotype.Component;
 
 @Component
