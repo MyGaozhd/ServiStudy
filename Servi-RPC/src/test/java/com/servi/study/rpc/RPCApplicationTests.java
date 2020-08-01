@@ -3,15 +3,14 @@ package com.servi.study.rpc;
 import com.servi.study.plugin.IPlugin;
 import com.servi.study.plugin.PluginsLoader;
 import com.servi.study.plugin.chain.InvokeChainManager;
-import com.servi.study.rpc.dto.IRequest;
-import com.servi.study.rpc.dto.IResponse;
+import com.servi.study.rpc.invoke.dto.IRequest;
+import com.servi.study.rpc.invoke.dto.IResponse;
 import com.servi.study.rpc.invoke.IBeforeInvoke;
 import com.servi.study.rpc.invoke.IRPCInvoke;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import java.util.Collection;
 import java.util.List;
 
 @SpringBootTest

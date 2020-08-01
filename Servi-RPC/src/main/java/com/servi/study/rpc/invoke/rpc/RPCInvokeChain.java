@@ -1,8 +1,8 @@
 package com.servi.study.rpc.invoke.rpc;
 
 import com.servi.study.plugin.chain.InvokeChainManager;
-import com.servi.study.rpc.dto.IRequest;
-import com.servi.study.rpc.dto.IResponse;
+import com.servi.study.rpc.invoke.dto.IRequest;
+import com.servi.study.rpc.invoke.dto.IResponse;
 import com.servi.study.rpc.invoke.AbstractInvokeChain;
 import com.servi.study.rpc.invoke.IAfterInvoke;
 import com.servi.study.rpc.invoke.IBeforeInvoke;
