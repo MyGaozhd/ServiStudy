@@ -42,6 +42,7 @@
         <module>servi-db</module>
         <module>servi-boot</module>
         <module>servi-aop</module>
+        <module>Servi-Oracle</module>
     </modules>
 
     <repositories>
