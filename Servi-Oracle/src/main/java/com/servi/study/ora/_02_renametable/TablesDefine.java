@@ -4,7 +4,7 @@ package com.servi.study.ora._02_renametable;
  * @author servi
  * @date 2020/8/22
  */
-public class TablesD {
+public class TablesDefine {
     public static String sscneedtable = "md_enumvalue;" +
             "md_busiactivity;" +
             "md_busiop;" +

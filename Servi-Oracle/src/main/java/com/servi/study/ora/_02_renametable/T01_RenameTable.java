@@ -1,6 +1,5 @@
 package com.servi.study.ora._02_renametable;
 
-import com.servi.study.json.IJsonUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
@@ -59,13 +58,13 @@ public class T01_RenameTable implements CommandLineRunner {
 
 
     static {
-        String[] sntable = TablesD.sscneedtable.split(";");
+        String[] sntable = TablesDefine.sscneedtable.split(";");
 
         for (String t : sntable) {
             ssc_need_tables.add(t.toLowerCase());
         }
 
-        String stable[] = TablesD.ssctable.split(";");
+        String stable[] = TablesDefine.ssctable.split(";");
         for (String t : stable) {
             ssc_tables.add(t.toLowerCase());
         }
