@@ -244,6 +244,7 @@ public class TablesDefine {
             "BD_MATERIAL;" +
             "BD_MATERIAL_V;" +
             "BD_PSNDOC;" +
+            "BD_PSNjob;" +
             "bd_bankdoc;" +
             "bd_banktype;" +
             "bd_measdoc;" +
@@ -297,67 +298,67 @@ public class TablesDefine {
             "pub_printnumber;" +
             "pub_nccfs_file;";
 
-    public static String ssctable = "PublicFieldDataTypeEnum;cp_appsnode;CP_APPSCATEGORY" +
-            "CP_APPSNODE" +
-            "CP_DATACOPY" +
-            "CP_DATACOPYCONFIG" +
-            "CP_DEVICE" +
-            "CP_DOC" +
-            "CP_DOC_ATTR" +
-            "CP_DOC_EFFECT" +
-            "CP_DOC_LIST" +
-            "CP_DOC_OBJREL" +
-            "CP_DOC_SYSATTR" +
-            "CP_DOC_SYSATTRTYPE" +
-            "CP_DOC_TYPE" +
-            "CP_DSCONFIG" +
-            "CP_EVENTLISTENER" +
-            "CP_EVENTTYPE" +
-            "CP_FAQ" +
-            "CP_FILELOCK" +
-            "CP_FREENODE" +
-            "CP_GZ_CONDITION" +
-            "CP_GZ_TEMPLATE" +
-            "CP_LDAPIMPORTCFG" +
-            "CP_MENUCATEGORY" +
-            "CP_MENUITEM" +
-            "CP_MODULE" +
-            "CP_ORGACCREDIT" +
-            "CP_ORGS" +
-            "CP_PRINT_CONDITION" +
-            "CP_PRINT_TEMPLATE" +
-            "CP_PSNDOC" +
-            "CP_PSNJOB" +
-            "CP_QUERYSCHEME" +
-            "CP_QUERY_CONDITION" +
-            "CP_QUERY_TEMPLATE" +
-            "CP_RELAPPSNODE" +
-            "CP_RES" +
-            "CP_RESACCREDIT" +
-            "CP_RESOURCE" +
-            "CP_RESPONSIBILITY" +
-            "CP_RESP_FUNC" +
-            "CP_RESP_RES" +
-            "CP_ROLE" +
-            "CP_ROLEFUNNODE" +
-            "CP_ROLEGROUP" +
-            "CP_ROLEORG" +
-            "CP_ROLERES" +
-            "CP_ROLERESP" +
-            "CP_RULESCHEME" +
-            "CP_SCANCFG" +
-            "CP_SUBFUNC" +
-            "CP_SYSINIT" +
-            "CP_SYSINITTEMP" +
-            "CP_TEMPLATEDEPT" +
-            "CP_TEMPLATEORG" +
-            "CP_TEMPLATEROLE" +
-            "CP_TEMPLATEUSER" +
-            "CP_USER" +
-            "CP_USERGROUP" +
-            "CP_USERGROUPROLE" +
-            "CP_USERGROUPUSER" +
-            "CP_USERROLE" +
+    public static String ssctable = "PublicFieldDataTypeEnum;cp_appsnode;CP_APPSCATEGORY;SSCRP_REFRESHACTion;" +
+            "CP_APPSNODE;" +
+            "CP_DATACOPY;" +
+            "CP_DATACOPYCONFIG;" +
+            "CP_DEVICE;" +
+            "CP_DOC;" +
+            "CP_DOC_ATTR;" +
+            "CP_DOC_EFFECT;" +
+            "CP_DOC_LIST;" +
+            "CP_DOC_OBJREL;" +
+            "CP_DOC_SYSATTR;" +
+            "CP_DOC_SYSATTRTYPE;" +
+            "CP_DOC_TYPE;" +
+            "CP_DSCONFIG;" +
+            "CP_EVENTLISTENER;" +
+            "CP_EVENTTYPE;" +
+            "CP_FAQ;" +
+            "CP_FILELOCK;" +
+            "CP_FREENODE;" +
+            "CP_GZ_CONDITION;" +
+            "CP_GZ_TEMPLATE;" +
+            "CP_LDAPIMPORTCFG;" +
+            "CP_MENUCATEGORY;" +
+            "CP_MENUITEM;" +
+            "CP_MODULE;" +
+            "CP_ORGACCREDIT;" +
+            "CP_ORGS;" +
+            "CP_PRINT_CONDITION;" +
+            "CP_PRINT_TEMPLATE;" +
+            "CP_PSNDOC;" +
+            "CP_PSNJOB;" +
+            "CP_QUERYSCHEME;" +
+            "CP_QUERY_CONDITION;" +
+            "CP_QUERY_TEMPLATE;" +
+            "CP_RELAPPSNODE;" +
+            "CP_RES;" +
+            "CP_RESACCREDIT;" +
+            "CP_RESOURCE;" +
+            "CP_RESPONSIBILITY;" +
+            "CP_RESP_FUNC;" +
+            "CP_RESP_RES;" +
+            "CP_ROLE;" +
+            "CP_ROLEFUNNODE;" +
+            "CP_ROLEGROUP;" +
+            "CP_ROLEORG;" +
+            "CP_ROLERES;" +
+            "CP_ROLERESP;" +
+            "CP_RULESCHEME;" +
+            "CP_SCANCFG;" +
+            "CP_SUBFUNC;" +
+            "CP_SYSINIT;" +
+            "CP_SYSINITTEMP;" +
+            "CP_TEMPLATEDEPT;" +
+            "CP_TEMPLATEORG;" +
+            "CP_TEMPLATEROLE;" +
+            "CP_TEMPLATEUSER;" +
+            "CP_USER;" +
+            "CP_USERGROUP;" +
+            "CP_USERGROUPROLE;" +
+            "CP_USERGROUPUSER;" +
+            "CP_USERROLE;" +
             "cp_appsnode;" +
             "cp_doc;" +
             "cp_doc_attr;" +
@@ -577,4 +578,12 @@ public class TablesDefine {
             "ssctp_approvemonitor;" +
             "ssckm_menutip;" +
             "RectificationEnum;" + "SSCTP_WORKINGGROUP_USer;";
+
+
+    public static void main(String[] args) {
+        String stable[] = TablesDefine.ssctable.split(";");
+        for (String t : stable) {
+            System.out.println("alter table " + t + " rename to " + t + "_S_;");
+        }
+    }
 }
