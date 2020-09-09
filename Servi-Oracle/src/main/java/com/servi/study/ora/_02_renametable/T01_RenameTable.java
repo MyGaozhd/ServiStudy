@@ -1,5 +1,6 @@
 package com.servi.study.ora._02_renametable;
 
+import com.servi.study.json.IJsonUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
@@ -9,9 +10,7 @@ import org.springframework.stereotype.Component;
 import javax.sql.DataSource;
 import java.sql.Connection;
 import java.sql.SQLException;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
@@ -31,9 +30,9 @@ public class T01_RenameTable implements CommandLineRunner {
     public void run(String... args) throws Exception {
         //使用oracle放开
 //        showConnection();
-//        showData();
+        showData();
 
-        resumeSSCDB();
+        //resumeSSCDB();
     }
 
     private void showConnection() throws SQLException {
@@ -43,15 +42,27 @@ public class T01_RenameTable implements CommandLineRunner {
         conn.close();
     }
 
-    private void showData() {
-        jdbcTemplate.queryForList("select table_name from user_tables")
-                .forEach(row -> {
-                    renameSSCDB(row);
-                });
+    int i = 0;
 
+    private void showData() {
+
+        List<Map<String, Object>> ll = jdbcTemplate.queryForList("select table_name from user_tables");
+
+        for (Map<String, Object> row : ll) {
+            String table = ((String) row.get("table_name")).toLowerCase();
+            renameSSCDB(table);
+        }
+
+        System.out.println(IJsonUtil.toJson(alltables));
+        System.out.println("=====================================");
+        System.out.println(IJsonUtil.toJson(tables));
+        System.out.println("=====================================");
+        System.out.println(IJsonUtil.toJson(errortables));
     }
 
-    private static Set<String> tables = new HashSet<>();
+    private static Set<String> alltables = new HashSet<>();
+    private static Set<String> errortables = new HashSet<>();
+    private static Map<String, String> tables = new HashMap<>();
 
     private static Set<String> ssc_need_tables = new HashSet<>();
     private static Set<String> ssc_tables = new HashSet<>();
@@ -74,19 +85,24 @@ public class T01_RenameTable implements CommandLineRunner {
 
     private static String pifx = "_s_";
 
-    public void renameSSCDB(Map<String, Object> row) {
-        String table = ((String) row.get("table_name")).toLowerCase();
-        tables.add(table);
-        if (!ssc_tables.contains(table) && !ssc_need_tables.contains(table) && !table.startsWith("saga")) {
-            String sql = " alter table " + table + " rename to " + table.substring(0, table.length() - 3) + pifx;
-            String sql1 = " alter table " + table + " rename to " + table + pifx;
+    public void renameSSCDB(String table) {
+        table = table.toLowerCase();
+        alltables.add(table);
+        if (!ssc_tables.contains(table) && !ssc_need_tables.contains(table) && !table.startsWith("saga") && !table.startsWith("opm")) {
+            String newtable = table + pifx;
+            String sql = " alter table " + table + " rename to " + newtable;
             try {
                 jdbcTemplate.execute(sql);
+                tables.put(table, newtable);
             } catch (Exception e) {
+                newtable = table.substring(0, table.length() - 3) + pifx;
+                String sql1 = " alter table " + table + " rename to " + newtable;
                 try {
                     jdbcTemplate.execute(sql1);
+                    tables.put(table, newtable);
                 } catch (Exception e1) {
                     log.info(sql1);
+                    errortables.add(table);
                 }
             }
         }

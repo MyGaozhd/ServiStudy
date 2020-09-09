@@ -5,8 +5,8 @@ spring:
     show-sql: true
   datasource:
     driver-class-name: oracle.jdbc.driver.OracleDriver
-    url: jdbc:oracle:thin:@10.10.18.70:1521:orcl
-    username: NC_728
+    url: jdbc:oracle:thin:@10.16.1.45:1521:orcl
+    username: NCC_SSC_2020817
     password: 1
   main:
     allow-bean-definition-overriding: true
