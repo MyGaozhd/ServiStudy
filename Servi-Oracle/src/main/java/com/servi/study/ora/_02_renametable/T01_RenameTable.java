@@ -88,7 +88,7 @@ public class T01_RenameTable implements CommandLineRunner {
     public void renameSSCDB(String table) {
         table = table.toLowerCase();
         alltables.add(table);
-        if (!ssc_tables.contains(table) && !ssc_need_tables.contains(table) && !table.startsWith("saga") && !table.startsWith("opm")) {
+        if (!ssc_tables.contains(table) && !ssc_need_tables.contains(table) && !table.startsWith("saga") && !table.startsWith("opm") && !table.startsWith("tm_") && !table.startsWith("fw_")) {
             String newtable = table + pifx;
             String sql = " alter table " + table + " rename to " + newtable;
             try {
