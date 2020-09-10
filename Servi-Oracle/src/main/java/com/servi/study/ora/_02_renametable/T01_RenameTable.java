@@ -30,9 +30,9 @@ public class T01_RenameTable implements CommandLineRunner {
     public void run(String... args) throws Exception {
         //使用oracle放开
 //        showConnection();
-        showData();
+//        showData();
 
-        //resumeSSCDB();
+        resumeSSCDB();
     }
 
     private void showConnection() throws SQLException {
@@ -109,36 +109,28 @@ public class T01_RenameTable implements CommandLineRunner {
     }
 
     public void resumeSSCDB() {
-        for (String table : ssc_need_tables) {
-            String sql = " alter table " + table.substring(0, table.length() - 3) + pifx + " rename to " + table;
-            String sql1 = " alter table " + table + pifx + " rename to " + table;
-            try {
-                jdbcTemplate.execute(sql);
-            } catch (Exception e) {
+        List<Map<String, Object>> ll = jdbcTemplate.queryForList("select table_name from user_tables");
+
+        for (Map<String, Object> row : ll) {
+            String table = ((String) row.get("table_name")).toLowerCase();
+            alltables.add(table);
+            if (table.startsWith("sscpfa") && table.endsWith("_s_")) {
+                String newtable = table.replace("_s_", "");
+                String sql = " alter table " + table + " rename to " + newtable;
                 try {
-                    jdbcTemplate.execute(sql1);
-                } catch (Exception e1) {
-                    log.info(sql1);
+                    jdbcTemplate.execute(sql);
+                    tables.put(table, newtable);
+                } catch (Exception e) {
+                    errortables.add(table);
                 }
             }
         }
 
-
-        for (String table : ssc_tables) {
-            String sql = " alter table " + table.substring(0, table.length() - 3) + pifx + " rename to " + table;
-            String sql1 = " alter table " + table + pifx + " rename to " + table;
-            try {
-                jdbcTemplate.execute(sql);
-            } catch (Exception e) {
-                try {
-                    jdbcTemplate.execute(sql1);
-                } catch (Exception e1) {
-                    log.info(sql1);
-                }
-            }
-        }
-
-
+        System.out.println(IJsonUtil.toJson(alltables));
+        System.out.println("=====================================");
+        System.out.println(IJsonUtil.toJson(tables));
+        System.out.println("=====================================");
+        System.out.println(IJsonUtil.toJson(errortables));
     }
 
     public void renameUAPDB(Map<String, Object> row) {

@@ -8,6 +8,116 @@ import java.util.Set;
  * @date 2020/8/22
  */
 public class TablesDefine {
+
+    public static String ssciufo = "AE_META_DRIVER;" +
+            "AE_OLAP_CUBE;" +
+            "AE_OLAP_DIM;" +
+            "AE_OLAP_FLT;" +
+            "AE_OLAP_HCY;" +
+            "AE_OLAP_LVL;" +
+            "AE_OLAP_LVLP;" +
+            "AE_OLAP_MEA;" +
+            "AE_OLAP_MEAP;" +
+            "AE_OLAP_PARAM;" +
+            "AE_OLAP_RLN;" +
+            "AE_QUALITYCHECK;" +
+            "AE_RELATION;" +
+            "AE_RELATION_DI;" +
+            "AE_RELATION_DIM;" +
+            "AE_RELATION_SMT;" +
+            "BI_BQTHIRDPARTYPLUGIN_DEF;" +
+            "BI_BQTHIRDPARTYPLUGIN_FILE;" +
+            "BI_CALC_DEF;" +
+            "BI_CALC_DIR;" +
+            "BI_CUBE_DEF;" +
+            "BI_CUBE_DIR;" +
+            "BI_DASHBOARD_DEF;" +
+            "BI_DASHBOARD_DEF_BAK;" +
+            "BI_DASHBOARD_DIR;" +
+            "BI_LINK_DEF;" +
+            "BI_LINK_DIR;" +
+            "BI_LINK_MODEL;" +
+            "BI_MD_COLUMN;" +
+            "BI_MD_DIR;" +
+            "BI_MD_TABLE;" +
+            "BI_MOBILE_PUBLISH_DEF;" +
+            "BI_MOBILE_PUBLISH_DIR;" +
+            "BI_MOBILE_PUBLISH_HOMEPAGE_DEF;" +
+            "BI_MOBILE_SHOW_HOMEPAGE_DEF;" +
+            "BI_OPENBQ_MONITOR;" +
+            "BI_OPENBQ_SERVERINFO;" +
+            "BI_PIVOT_DEF;" +
+            "BI_PIVOT_DIR;" +
+            "BI_PIVOT_SEARCH;" +
+            "BI_REPORT_MANAGE;" +
+            "BI_SCHD_HOST;" +
+            "BI_SCHD_JOBQUEUE;" +
+            "BI_SCHD_MODULE;" +
+            "BI_SCHD_PARAMETER;" +
+            "BI_SCHD_PERFLOG;" +
+            "BI_SCHD_TASKQUEUE;" +
+            "BI_SCHD_TEMPTABLE;" +
+            "BI_SCHD_TIMER;" +
+            "BI_SCHEMA_ENV;" +
+            "BI_SMART_DEF;" +
+            "BI_SMART_DIR;" +
+            "BI_SMART_FILTER;" +
+            "BI_SMART_MACRO;" +
+            "BI_SUBSCRIBE_DEF;" +
+            "BI_SUBSCRIBE_DIR;" +
+            "BQ_PERMISSION;" +
+            "FIBA_DATAMODELCLASS;" +
+            "FIBA_MODELDESIGN;" +
+            "IUFO_FREEREPORT;" +
+            "IUFO_FREEREP_DIR;" +
+            "IUFO_FREE_USERINDIV;" +
+            "IUFO_FUNC_DEMO;" +
+            "IUFO_GRAPHIC_DIRECTORY;" +
+            "IUFO_GRAPHIC_EXTREGISTER;" +
+            "IUFO_GRAPHIC_GRAPH;" +
+            "IUFO_GRAPHIC_GRAPHPROPERTY;" +
+            "IUFO_GRAPHIC_NCCTOKEN;" +
+            "IUFO_GRAPHIC_QUERYEXTREGISTER;" +
+            "IUFO_GRAPHIC_STORYBOARD;" +
+            "IUFO_GRAPHIC_STORYBOARDLINK;" +
+            "IUFO_GRAPHIC_STORYBOARDMEMBER;" +
+            "IUFO_GRAPHIC_STORYBOARDMULLINK;" +
+            "IUFO_LIGHTSUBSCIBE_TASK;" +
+            "IUFO_LIGHT_JOB;" +
+            "IUFO_LIGHT_SUBTASK_INSTANCE;" +
+            "IUFO_MY_REPORT;" +
+            "IUFO_PUBCASEDEFINE;" +
+            "IUFO_QUERYCASEDEFINE;" +
+            "IUFO_REPCONDS_CONFIG;" +
+            "IUFO_REPLIB_DETAIL;" +
+            "IUFO_REPLIB_LIST;" +
+            "IUFO_REPLIB_SORT;" +
+            "IUFO_REPPUBLISH;" +
+            "IUFO_SUBSCIBE_EMBRACER;" +
+            "IUFO_SUBSCIBE_TASK;" +
+            "IUFO_SUBSCIBE_TASK_DATA;" +
+            "IUFO_TASK_DATA_INSTANCE;" +
+            "IUFO_TIMINGSHARE_TASK;" +
+            "IUFO_TRACEDATADISPATCH;" +
+            "IUFO_TRACEDATAREGISTER;" +
+            "REPORT_COLLECTION;" +
+            "REPORT_DATAMODEL;" +
+            "REPORT_DEFDIM;" +
+            "REPORT_MODELFIELD;" +
+            "REPORT_QUERYCONDITION;" +
+            "REPORT_RECUSE;" +
+            "REPORT_REPORTCLASS;" +
+            "REPORT_REPORTDETAIL;" +
+            "REPORT_REPORTLINK;" +
+            "REPORT_REPORTOBJECT;" +
+            "REPORT_REPORTPUBLISH;" +
+            "REPORT_REPORTSTYLE;" +
+            "SMARTBA_DIRRELATION;" +
+            "SMARTBA_PRESETDATA;" +
+            "UFOB_NODE_ORDER;" +
+            "UFOB_NODE_SCHEMA;" +
+            "UFOB_NODE_USER;";
+
     public static String sscneedtable = "md_enumvalue;bd_mode_selected;" +
             "bd_uniquerule;" +
             "bd_userdefitem;" +
@@ -576,9 +686,10 @@ public class TablesDefine {
             "cp_roleresp;";
 
     public static void main(String[] args) {
-        String stable[] = TablesDefine.ssctable.split(";");
+        String stable[] = TablesDefine.ssciufo.split(";");
         for (String t : stable) {
-            System.out.println("alter table " + t.toLowerCase() + " rename to " + t.toLowerCase() + "_S_;");
+            t = t.toLowerCase();
+            System.out.println("alter table " + t + "_s_" + " rename to " + t + ";");
         }
     }
 }
