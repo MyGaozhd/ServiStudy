@@ -9,7 +9,7 @@ import java.util.Set;
  */
 public class TablesDefine {
 
-    public static String ssciufo = "AE_META_DRIVER;" +
+    public static String sscneedtable = "AE_META_DRIVER;" +
             "AE_OLAP_CUBE;" +
             "AE_OLAP_DIM;" +
             "AE_OLAP_FLT;" +
@@ -116,9 +116,7 @@ public class TablesDefine {
             "SMARTBA_PRESETDATA;" +
             "UFOB_NODE_ORDER;" +
             "UFOB_NODE_SCHEMA;" +
-            "UFOB_NODE_USER;";
-
-    public static String sscneedtable = "md_enumvalue;bd_mode_selected;" +
+            "UFOB_NODE_USER;" + "md_enumvalue;bd_mode_selected;" +
             "bd_uniquerule;" +
             "bd_userdefitem;" +
             "bd_formatdoc;" +
@@ -431,7 +429,7 @@ public class TablesDefine {
             "pub_printinfo;" +
             "pub_printlog;" +
             "pub_printnumber;" +
-            "pub_nccfs_file;";
+            "pub_nccfs_file;bd_ref_relation;bd_uniquerule_item;bd_custbank";
 
     public static String ssctable = "imag_basefactory;" +
             "imag_billmapping;" +
@@ -686,10 +684,10 @@ public class TablesDefine {
             "cp_roleresp;";
 
     public static void main(String[] args) {
-        String stable[] = TablesDefine.ssciufo.split(";");
+        String stable[] = TablesDefine.ssctable.split(";");
         for (String t : stable) {
             t = t.toLowerCase();
-            System.out.println("alter table " + t + "_s_" + " rename to " + t + ";");
+            System.out.println("alter table " + t + " rename to " + t + "_s_" + ";");
         }
     }
 }
