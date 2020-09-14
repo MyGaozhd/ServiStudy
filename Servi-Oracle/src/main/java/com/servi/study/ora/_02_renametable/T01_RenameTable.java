@@ -30,8 +30,8 @@ public class T01_RenameTable implements CommandLineRunner {
     public void run(String... args) throws Exception {
         //使用oracle放开
 //        showConnection();
-        showData();
-
+        changeSSCDB();
+//        resumeBaseData();
 //        resumeSSCDB();
     }
 
@@ -44,7 +44,7 @@ public class T01_RenameTable implements CommandLineRunner {
 
     int i = 0;
 
-    private void showData() {
+    private void changeSSCDB() {
 
         List<Map<String, Object>> ll = jdbcTemplate.queryForList("select table_name from user_tables");
 
@@ -58,6 +58,47 @@ public class T01_RenameTable implements CommandLineRunner {
         System.out.println(IJsonUtil.toJson(tables));
         System.out.println("=====================================");
         System.out.println(IJsonUtil.toJson(errortables));
+    }
+
+    private void resumeBaseData() {
+
+        String s = Test.get();
+        Map<String, String> map = IJsonUtil.fromJson(Map.class, s);
+        Map<String, String> newMap = new HashMap<>();
+
+        for (String table : map.keySet()) {
+            newMap.put(map.get(table).toLowerCase(), table);
+        }
+        IJsonUtil.toJson(newMap);
+
+        List<Map<String, Object>> ll = jdbcTemplate.queryForList("select table_name from user_tables");
+
+        for (Map<String, Object> row : ll) {
+            String table = ((String) row.get("table_name")).toLowerCase();
+            if (newMap.containsKey(table)) {
+                renameBaseDB(table, newMap);
+            }
+        }
+
+        System.out.println(IJsonUtil.toJson(alltables));
+        System.out.println("=====================================");
+        System.out.println(IJsonUtil.toJson(tables));
+        System.out.println("=====================================");
+        System.out.println(IJsonUtil.toJson(errortables));
+    }
+
+    public void renameBaseDB(String table, Map<String, String> newMap) {
+        table = table.toLowerCase();
+        alltables.add(table);
+
+        String newtable = newMap.get(table);
+        String sql = " alter table " + table + " rename to " + newtable;
+        try {
+            jdbcTemplate.execute(sql);
+            tables.put(table, newtable);
+        } catch (Exception e) {
+            errortables.add(table);
+        }
     }
 
     private static Set<String> alltables = new HashSet<>();
@@ -101,8 +142,15 @@ public class T01_RenameTable implements CommandLineRunner {
                     jdbcTemplate.execute(sql1);
                     tables.put(table, newtable);
                 } catch (Exception e1) {
-                    log.info(sql1);
-                    errortables.add(table);
+                    try {
+                        newtable = table.substring(0, table.length() - 4) + "_" + pifx;
+                        String sql2 = " alter table " + table + " rename to " + newtable;
+                        jdbcTemplate.execute(sql2);
+                        tables.put(table, newtable);
+                    } catch (Exception e2) {
+                        log.info(sql1);
+                        errortables.add(table);
+                    }
                 }
             }
         }

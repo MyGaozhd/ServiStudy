@@ -1,6 +1,9 @@
 package com.servi.study.ora._02_renametable;
 
+import com.servi.study.json.IJsonUtil;
+
 import java.util.HashSet;
+import java.util.Map;
 import java.util.Set;
 
 /**
@@ -388,7 +391,6 @@ public class TablesDefine {
             "bd_sharebilltype;" +
             "bd_scanconvertor;" +
             "bd_scanbilltypeinfo;" +
-            "bd_imagescantype;" +
             "bd_cr_resource;" +
             "bd_inoutbusiclass;" +
             "bd_psnjob;" +
@@ -438,7 +440,6 @@ public class TablesDefine {
             "bd_imagescansetup;" +
             "image_state;" +
             "IMAGETEMPTABLE;" +
-            "bd_imagescantype;" +
             "imag_receiver;" +
             "imag_task;" +
             "imag_ocr_record;" +
@@ -689,5 +690,10 @@ public class TablesDefine {
             t = t.toLowerCase();
             System.out.println("alter table " + t + " rename to " + t + "_s_" + ";");
         }
+
+//        String s = Test.get();
+//        Map<String, String> map = IJsonUtil.fromJson(Map.class, s);
+//
+//        System.out.println(IJsonUtil.toJson(map));
     }
 }
