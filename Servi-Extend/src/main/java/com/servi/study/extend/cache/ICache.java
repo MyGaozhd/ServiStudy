@@ -44,7 +44,7 @@ public interface ICache<E extends Serializable> {
     /**
      * 批量添加元素
      *
-     * @param e
+     * @param args
      * @return
      */
     public boolean addAll(E[] args);
