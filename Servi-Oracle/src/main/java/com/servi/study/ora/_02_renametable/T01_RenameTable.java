@@ -30,9 +30,10 @@ public class T01_RenameTable implements CommandLineRunner {
     public void run(String... args) throws Exception {
         //使用oracle放开
 //        showConnection();
-        changeSSCDB();
+//        changeSSCDB();
 //        resumeBaseData();
 //        resumeSSCDB();
+        changeBaseDB();
     }
 
     private void showConnection() throws SQLException {
@@ -51,6 +52,21 @@ public class T01_RenameTable implements CommandLineRunner {
         for (Map<String, Object> row : ll) {
             String table = ((String) row.get("table_name")).toLowerCase();
             renameSSCDB(table);
+        }
+
+        System.out.println(IJsonUtil.toJson(alltables));
+        System.out.println("=====================================");
+        System.out.println(IJsonUtil.toJson(tables));
+        System.out.println("=====================================");
+        System.out.println(IJsonUtil.toJson(errortables));
+    }
+
+    private void changeBaseDB() {
+
+        List<Map<String, Object>> ll = jdbcTemplate.queryForList("select table_name from user_tables");
+
+        for (Map<String, Object> row : ll) {
+            renameUAPDB(row);
         }
 
         System.out.println(IJsonUtil.toJson(alltables));
@@ -129,7 +145,13 @@ public class T01_RenameTable implements CommandLineRunner {
     public void renameSSCDB(String table) {
         table = table.toLowerCase();
         alltables.add(table);
-        if (!ssc_tables.contains(table) && !ssc_need_tables.contains(table) && !table.startsWith("saga") && !table.startsWith("opm") && !table.startsWith("tm_") && !table.startsWith("fw_")) {
+        if (!ssc_tables.contains(table) &&
+                !ssc_need_tables.contains(table) &&
+                !table.startsWith("saga") &&
+                !table.startsWith("opm") &&
+                !table.startsWith("tm_") &&
+                !table.startsWith("fw_") &&
+                !table.startsWith("sscpfa")) {
             String newtable = table + pifx;
             String sql = " alter table " + table + " rename to " + newtable;
             try {
@@ -183,27 +205,24 @@ public class T01_RenameTable implements CommandLineRunner {
 
     public void renameUAPDB(Map<String, Object> row) {
         String table = ((String) row.get("table_name")).toLowerCase();
-
-//        if (ssc_tables.contains(table)) {
-//            String sql = " alter table " + table + " rename to " + table + pifx;
-//            jdbcTemplate.execute(sql);
-//            log.info(sql);
-//        }
-
+        alltables.add(table);
         if (ssc_tables.contains(table)) {
-            String sql = " alter table " + table + " rename to " + table.substring(0, table.length() - 3) + pifx;
-            String sql1 = " alter table " + table + " rename to " + table + pifx;
+            String newTable = table.substring(0, table.length() - 3) + pifx;
+            String sql = " alter table " + table + " rename to " + newTable;
             try {
                 jdbcTemplate.execute(sql);
+                tables.put(table, newTable);
             } catch (Exception e) {
                 try {
+                    newTable = table + pifx;
+                    String sql1 = " alter table " + table + " rename to " + table + pifx;
                     jdbcTemplate.execute(sql1);
+                    tables.put(table, newTable);
                 } catch (Exception e1) {
-                    log.info(sql1);
+                    errortables.add(table);
                 }
             }
         }
     }
-
 }
 
