@@ -405,7 +405,7 @@ public class TablesDefine {
             "SM_USER_DEFAULTPWD;" +
             "WFM_ACCEPTNCTYPE;" +
             "PUB_INSTANCE_DEF;" +
-            "ORG_UAGROUP;";
+            "ORG_UAGROUP;"+"PUB_OID;PUB_BCR_SN";
 
     public static String ssctable = "imag_basefactory;" +
             "imag_billmapping;" +

@@ -30,10 +30,10 @@ public class T01_RenameTable implements CommandLineRunner {
     public void run(String... args) throws Exception {
         //使用oracle放开
 //        showConnection();
-//        changeSSCDB();
+        changeSSCDB();
 //        resumeBaseData();
 //        resumeSSCDB();
-        changeBaseDB();
+//        changeBaseDB();
     }
 
     private void showConnection() throws SQLException {
