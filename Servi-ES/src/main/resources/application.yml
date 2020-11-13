@@ -7,3 +7,8 @@ spring:
     elasticsearch:
       cluster-name: elasticsearch
       cluster-nodes: localhost:9300
+elasticsearch:
+  host: localhost
+  port: 9200
+  username:
+  password:
