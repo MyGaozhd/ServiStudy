@@ -1,4 +1,4 @@
-package com.servi.study.zk._00_test;
+package com.servi.study.zk.curator._00_test;
 
 import com.servi.study.log.ServiLogger;
 import org.I0Itec.zkclient.IZkDataListener;

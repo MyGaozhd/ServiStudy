@@ -43,6 +43,7 @@
         <module>servi-boot</module>
         <module>servi-aop</module>
         <module>Servi-Oracle</module>
+        <module>servi-zk-curator</module>
     </modules>
 
     <repositories>

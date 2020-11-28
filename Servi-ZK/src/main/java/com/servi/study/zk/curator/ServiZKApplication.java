@@ -1,4 +1,4 @@
-package com.servi.study.zk;
+package com.servi.study.zk.curator;
 
 import com.servi.study.json.IJsonUtil;
 import org.springframework.boot.SpringApplication;

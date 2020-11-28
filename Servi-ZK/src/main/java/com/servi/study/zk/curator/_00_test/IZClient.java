@@ -1,4 +1,4 @@
-package com.servi.study.zk._00_test;
+package com.servi.study.zk.curator._00_test;
 
 public interface IZClient {
 
