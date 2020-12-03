@@ -126,13 +126,13 @@ public class T01_RenameTable implements CommandLineRunner {
 
 
     static {
-        String[] sntable = TablesDefine.sscneedtable.split(";");
+        String[] sntable = TablesDefine1.sscneedtable.split(";");
 
         for (String t : sntable) {
             ssc_need_tables.add(t.toLowerCase());
         }
 
-        String stable[] = TablesDefine.ssctable.split(";");
+        String stable[] = TablesDefine1.ssctable.split(";");
         for (String t : stable) {
             ssc_tables.add(t.toLowerCase());
         }

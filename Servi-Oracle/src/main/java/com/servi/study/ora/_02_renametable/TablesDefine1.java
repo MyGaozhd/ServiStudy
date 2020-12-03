@@ -6,7 +6,71 @@ package com.servi.study.ora._02_renametable;
  */
 public class TablesDefine1 {
 
-    public static String sscneedtable = "AE_META_DRIVER;" +
+    public static String sscneedtable =
+            "BD_BILLTYPE2;" +
+                    "BD_BILLTYPE;" +
+                    "BD_FWDBILLTYPE;" +
+                    "BD_RELATEDAPP;" +
+                    "OM_POST;" +
+                    "ORG_ORGS_V;" +
+                    "ORG_FINANCEORG;" +
+                    "ORG_FINANCEORG_V;" +
+                    "ORG_SETOFBOOK;" +
+                    "BD_CURRTYPE;" +
+                    "ORG_CORP;" +
+                    "ORG_CORP_V;" +
+                    "BD_WORKCALENDAR;" +
+                    "BD_WORKCALENDARDATE;" +
+                    "BD_WORKCALENDYEAR;" +
+                    "ORG_GROUP;" +
+                    "ORG_ORGS;" +
+                    "ORG_ORGS_V;" +
+                    "ORG_ORGTYPE;" +
+                    "ORG_DEPT;" +
+                    "ORG_DEPT_V;" +
+                    "BD_SUPPLIER;" +
+                    "BD_CUST_SUPPLIER;" +
+                    "BD_BANKACCSUB;" +
+                    "BD_CUSTOMER;" +
+                    "BD_MATERIAL;" +
+                    "BD_MATERIAL_V;" +
+                    "BD_PSNDOC;" +
+                    "BD_BANKDOC;" +
+                    "BD_BANKTYPE;" +
+                    "BD_MEASDOC;" +
+                    "SM_USER_EX;" +
+                    "ORG_SSCBUSIUNITCLIENTAGE;" +
+                    "BD_USERDEFRULEREF;" +
+                    "BD_USERDEFRULE;" +
+                    "BD_SHAREBILLTYPE;" +
+                    "BD_SCANCONVERTOR;" +
+                    "BD_SCANBILLTYPEINFO;" +
+                    "BD_IMAGESCANTYPE;" +
+                    "BD_CR_RESOURCE;" +
+                    "BD_INOUTBUSICLASS;" +
+                    "BD_PSNJOB;" +
+                    "BD_SUPORG;" +
+                    "BD_TAXCODE;" +
+                    "BD_TAXRATE;" +
+                    "ORG_ORGMANAGER;" +
+                    "BD_CROSSRULE;" +
+                    "BD_CROSSRULESCOPE;" +
+                    "BD_CROSSBUSIMAP;" +
+                    "ORG_ACCOUNTINGBOOK;" +
+                    "PUB_WF_CHECKNOTE;" +
+                    "PUB_WORKFLOWPERSON;" +
+                    "BD_COUNTRYZONE;" +
+                    "BD_ADDRESS;" +
+                    "BD_REGION;" +
+                    "BD_BALATYPE ;" +
+                    "BD_BILLTYPE2_CROSSSERVICE;" +
+                    "BD_REF_RELATION;" +
+                    "BD_UNIQUERULE_ITEM;" +
+                    "BD_CUSTBANK;" +
+                    "SM_USER_DEFAULTPWD;" +
+                    "WFM_ACCEPTNCTYPE;" +
+                    "PUB_INSTANCE_DEF;" +
+                    "ORG_UAGROUP;AE_META_DRIVER;" +
             "AE_OLAP_CUBE;" +
             "AE_OLAP_DIM;" +
             "AE_OLAP_FLT;" +
@@ -425,7 +489,19 @@ public class TablesDefine1 {
             "pub_printinfo;" +
             "pub_printlog;" +
             "pub_printnumber;" +
-            "pub_nccfs_file;bd_ref_relation;bd_uniquerule_item;bd_custbank";
+            "pub_nccfs_file;" +
+                    "bd_ref_relation;" +
+                    "bd_uniquerule_item;" +
+                    "bd_custbank;" +
+                    "PUB_OID;" +
+                    "PUB_BCR_SN;sm_group_app;" +
+                    "sm_individual_reg;" +
+                    "pub_property_setting;" +
+                    "sm_user_app;" +
+                    "sm_userimage;" +
+                    "sm_funproperty_register;" +
+                    "pub_user_recentvisit;" +
+                    "sm_disturb;";
 
     public static String ssctable = "imag_basefactory;" +
             "imag_billmapping;" +
