@@ -7,7 +7,7 @@ package com.servi.study.ora._02_renametable;
 public class TablesDefine1 {
 
     public static String sscneedtable =
-            "BD_BILLTYPE2;BD_BALATYPE;" +
+            "pub_wf_ist;BD_BILLTYPE2;BD_BALATYPE;" +
                     "BD_BILLTYPE;" +
                     "BD_FWDBILLTYPE;" +
                     "BD_RELATEDAPP;" +
