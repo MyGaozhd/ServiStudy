@@ -30,10 +30,12 @@ public class T01_RenameTable implements CommandLineRunner {
     public void run(String... args) throws Exception {
         //使用oracle放开
 //        showConnection();
-        changeSSCDB();
+//        changeSSCDB();
 //        resumeBaseData();
 //        resumeSSCDB();
 //        changeBaseDB();
+
+        testSSCDB();
     }
 
     private void showConnection() throws SQLException {
@@ -223,6 +225,51 @@ public class T01_RenameTable implements CommandLineRunner {
                 }
             }
         }
+    }
+
+    public void testSSCDB() {
+
+        List<Map<String, Object>> ll = jdbcTemplate.queryForList("select table_name from user_tables");
+
+        Set<String> readyTables = new HashSet<>();
+        for (Map<String, Object> row : ll) {
+            String table = ((String) row.get("table_name")).toLowerCase();
+            readyTables.add(table);
+        }
+
+        Set<String> notReadyTables = new HashSet<>();
+
+        for (String table : ssc_need_tables) {
+            if (!readyTables.contains(table)) {
+                notReadyTables.add(table);
+            }
+        }
+
+        for (String table : ssc_tables) {
+            if (!readyTables.contains(table)) {
+                notReadyTables.add(table);
+            }
+        }
+
+        System.out.println(IJsonUtil.toJson(notReadyTables));
+    }
+
+
+    public void buildSSCDBSql() {
+
+        StringBuilder s = new StringBuilder();
+        int i = 0;
+        for (String table : ssc_need_tables) {
+            if (i > 0) {
+                s.append(",");
+                i++;
+            }
+            s.append("'" + table + "'");
+        }
+        for (String table : ssc_tables) {
+            s.append(",'" + table + "'");
+        }
+
     }
 }
 

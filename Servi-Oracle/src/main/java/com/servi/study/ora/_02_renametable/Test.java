@@ -7,8 +7,11 @@ import java.util.List;
 public class Test {
 
     public static void main(String[] args) {
-        get();
+//        get();
+        StringBuilder s = new StringBuilder("");
+
     }
+
     public static String get() {
         String s = null;
         boolean isFirst = true;
