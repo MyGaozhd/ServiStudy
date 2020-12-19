@@ -33,9 +33,9 @@ public class T01_RenameTable implements CommandLineRunner {
 //        changeSSCDB();
 //        resumeBaseData();
 //        resumeSSCDB();
-//        changeBaseDB();
+        changeBaseDB();
 
-        testSSCDB();
+//        testSSCDB();
     }
 
     private void showConnection() throws SQLException {

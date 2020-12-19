@@ -52,7 +52,6 @@ public class T02_MyThreadPool {
     }
 
     public static void main(String[] args) {
-
         BlockingQueue<Runnable> workQueue = new LinkedBlockingQueue<>();
         T02_MyThreadPool pool = new T02_MyThreadPool(10, workQueue);
 

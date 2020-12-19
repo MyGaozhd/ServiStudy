@@ -11,6 +11,7 @@ import java.util.Set;
  */
 public class TablesDefine1 {
     public static void main(String[] args) {
+
         String stable[] = TablesDefine1.ssctable.split(";");
         Set<String> ssctables = new HashSet<>();
         for (String t : stable) {
