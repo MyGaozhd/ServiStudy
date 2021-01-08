@@ -526,27 +526,134 @@ public class TablesDefine1 {
                     "pub_user_recentvisit;" +
                     "sm_disturb;";
 
-    public static String ssctable = "imag_basefactory;sscrp_billguidelog;ssctp_billopen;ssctp_billopenparam;ssctp_sscextbillmap;ssctp_sscexttype;" +
-            "imag_billmapping;" +
-            "imag_lookupclass;" +
-            "image_rescan;" +
-            "bd_imagescansetup;" +
-            "image_state;" +
-            "IMAGETEMPTABLE;" +
-            "imag_receiver;" +
-            "imag_task;" +
-            "imag_ocr_record;" +
+    public static String ssctable = "bd_imagescansetup;" +
+            "BD_IMAGESCANTYPE;" +
             "bd_scanbilltypeinfo;" +
             "bd_scanconvertor;" +
+            "CP_APPSCATEGORY;" +
+            "CP_APPSNODE;" +
+            "CP_DATACOPY;" +
+            "CP_DATACOPYCONFIG;" +
+            "CP_DEVICE;" +
+            "CP_DOC;" +
+            "CP_DOC_ATTR;" +
+            "CP_DOC_EFFECT;" +
+            "CP_DOC_LIST;" +
+            "CP_DOC_OBJREL;" +
+            "CP_DOC_SYSATTR;" +
+            "CP_DOC_SYSATTRTYPE;" +
+            "CP_DOC_TYPE;" +
+            "CP_EVENTLISTENER;" +
+            "CP_EVENTTYPE;" +
+            "CP_FAQ;" +
+            "CP_FILELOCK;" +
+            "CP_FREENODE;" +
+            "CP_GZ_CONDITION;" +
+            "CP_GZ_TEMPLATE;" +
+            "CP_LDAPIMPORTCFG;" +
+            "CP_MENUCATEGORY;" +
+            "CP_MENUITEM;" +
+            "CP_MODULE;" +
+            "CP_ORGACCREDIT;" +
+            "CP_ORGS;" +
+            "CP_PRINT_CONDITION;" +
+            "CP_PRINT_TEMPLATE;" +
+            "CP_PSNDOC;" +
+            "CP_PSNJOB;" +
+            "CP_QUERY_CONDITION;" +
+            "CP_QUERY_TEMPLATE;" +
+            "CP_QUERYSCHEME;" +
+            "CP_RELAPPSNODE;" +
+            "CP_RES;" +
+            "CP_RESACCREDIT;" +
+            "CP_RESOURCE;" +
+            "CP_RESP_FUNC;" +
+            "CP_RESP_RES;" +
+            "CP_RESPONSIBILITY;" +
+            "CP_ROLE;" +
+            "CP_ROLEFUNNODE;" +
+            "CP_ROLEGROUP;" +
+            "CP_ROLEORG;" +
+            "CP_ROLERES;" +
+            "CP_ROLERESP;" +
+            "CP_RULESCHEME;" +
+            "CP_SCANCFG;" +
+            "CP_SUBFUNC;" +
+            "CP_SYSINIT;" +
+            "CP_SYSINITTEMP;" +
+            "CP_TEMPLATEDEPT;" +
+            "CP_TEMPLATEORG;" +
+            "CP_TEMPLATEROLE;" +
+            "CP_TEMPLATEUSER;" +
+            "CP_USER;" +
+            "CP_USERGROUP;" +
+            "CP_USERGROUPROLE;" +
+            "CP_USERGROUPUSER;" +
+            "CP_USERROLE;" +
+            "imag_basefactory;" +
+            "imag_billmapping;" +
+            "imag_lookupclass;" +
+            "imag_ocr_record;" +
+            "imag_receiver;" +
+            "imag_task;" +
             "imag_verify_record;" +
+            "image_rescan;" +
+            "image_state;" +
+            "LFW_ZDYDJ;" +
+            "LFW_ZDYDJ_B;" +
+            "ORG_SSCBUSINESSUNITTYPE;" +
+            "ORG_SSCBUSIUNITCLIENTAGE;" +
+            "ORG_SSCLIENTAGE;" +
+            "ORG_SSCORG;" +
+            "ORG_SSCORG_V;" +
+            "ORG_SSCTYPE;" +
+            "PUB_NCWEBPUBBSPLUGIN;" +
+            "PUB_RIAFBACTION;" +
+            "PUB_RIAWFTXSETUP;" +
+            "SSC_ACTIVETASK;" +
+            "SSC_ALLOTRULE;" +
+            "SSC_ALLOTRULE_B;" +
+            "SSC_BILLAPPROVESTATUS;" +
+            "SSC_BILLITEMMAP;" +
+            "SSC_BILLLANDMARKSTATEVO;" +
+            "SSC_BILLORG;" +
+            "SSC_BUSI_ACT_OP;" +
+            "SSC_BUSIACTIVITY;" +
+            "SSC_BUSIGROUP;" +
+            "SSC_BUSIINFO;" +
+            "SSC_BUSIOPERATION;" +
+            "SSC_DAILYREPORT;" +
+            "SSC_EXCLUSION;" +
+            "ssc_fbannexpermissions;" +
+            "ssc_fbbusiaction;" +
+            "SSC_FBTRANSCONFIG;" +
+            "SSC_FBTRANSLOG;" +
+            "SSC_JUMPCONFIGURATION;" +
+            "SSC_LADERULE;" +
+            "SSC_LADERULE_B;" +
+            "SSC_MANAGELEVEL;" +
+            "SSC_MONTHREPORT;" +
             "ssc_mqerrorinfo;" +
             "ssc_mqkeytransfer;" +
             "ssc_mqreq;" +
+            "SSC_PERSONTASK;" +
+            "SSC_POSTTASK;" +
+            "SSC_SSCTASK;" +
+            "SSC_SSCTASKLOG;" +
+            "SSC_TASKSTATE;" +
+            "SSC_WFBUSIOPERATOR;" +
+            "SSC_WFLANDMARKSTATE;" +
+            "SSCBD_APPLY_SCOPE;" +
+            "SSCBD_POINT;" +
+            "SSCBD_POINT_CLASS;" +
+            "SSCBD_POINT_ITEM;" +
+            "SSCBD_POINT_RULE;" +
+            "SSCBD_PROBLEM_CLASS;" +
+            "SSCBD_PROBLEM_MATTER;" +
             "sscivm_billfield;" +
             "sscivm_billtype;" +
             "sscivm_inv_ina_relation;" +
             "sscivm_invoice;" +
-            "sscivm_invoicedetail;" +
             "sscivm_invoice_air;" +
             "sscivm_invoice_airdetail;" +
             "sscivm_invoice_bus;" +
@@ -558,69 +665,10 @@ public class TablesDefine1 {
             "sscivm_invoice_taxi;" +
             "sscivm_invoice_train;" +
             "sscivm_invoice_voucher_bill;" +
-            "sscivm_invoicetype;" +
+            "sscivm_invoicedetail;" +
             "sscivm_ivappdetail;" +
             "sscivm_ivapplication;" +
             "sscivm_ivapplog;" +
-            "sscrp_billtransmit_log;" +
-            "sscrp_invoice;" +
-            "sscrp_invoicedetail;" +
-            "sscrp_invoice_relation;" +
-            "sscrp_invoice_status_task;" +
-            "sscrp_invoice_task_log;" +
-            "sscrp_refreshaction;" +
-            "sscrp_detail;" +
-            "sscrp_bill;" +
-            "sscrp_busiclass;" +
-            "sscrp_busiclass_b;" +
-            "sscrp_detail_done;" +
-            "sscrp_bill_done;" +
-            "sscrp_detail_temp;" +
-            "sscrp_bill_temp;" +
-            "sscrp_fieldmap;" +
-            "sscrp_fieldmap_b;" +
-            "sscrp_publicfield;" +
-            "sscrp_usermenu;" +
-            "ssc_activetask;" +
-            "ssc_billapprovestatus;" +
-            "ssc_billitemmap;" +
-            "ssc_billlandmarkstatevo;" +
-            "ssc_busiactivity;" +
-            "ssc_busi_act_op;" +
-            "org_sscbusinessunittype;" +
-            "org_sscbusiunitclientage;" +
-            "ssc_busioperation;" +
-            "bd_imagescantype;" +
-            "ssc_jumpconfiguration;" +
-            "ssc_laderule;" +
-            "ssc_laderule_b;" +
-            "ssc_managelevel;" +
-            "ssc_persontask;" +
-            "ssc_exclusion;" +
-            "ssc_posttask;" +
-            "org_sscorg;" +
-            "org_sscorg_v;" +
-            "ssc_billorg;" +
-            "ssc_allotrule_b;" +
-            "ssc_allotrule;" +
-            "sscbd_apply_scope;" +
-            "sscbd_point;" +
-            "sscbd_point_item;" +
-            "sscbd_point_class;" +
-            "sscbd_point_rule;" +
-            "sscbd_problem_class;" +
-            "sscbd_problem_matter;" +
-            "ssc_busigroup;" +
-            "ssc_dailyreport;" +
-            "org_ssclientage;" +
-            "ssc_monthreport;" +
-            "ssc_ssctask;" +
-            "ssc_ssctasklog;" +
-            "org_ssctype;" +
-            "ssc_taskstate;" +
-            "ssc_busiinfo;" +
-            "ssc_wfbusioperator;" +
-            "ssc_wflandmarkstate;" +
             "ssckm_authority;" +
             "ssckm_classify;" +
             "ssckm_knowledge;" +
@@ -661,121 +709,80 @@ public class TablesDefine1 {
             "sscqm_check_task_condition;" +
             "sscqm_check_task_condition_sub;" +
             "sscqm_check_task_content;" +
-            "sscsfm_evaluated_detail;" +
+            "sscrp_bill;" +
+            "sscrp_bill_done;" +
+            "sscrp_bill_temp;" +
+            "sscrp_billguidelog;" +
+            "sscrp_billtransmit_log;" +
+            "sscrp_busiclass;" +
+            "sscrp_busiclass_b;" +
+            "sscrp_detail;" +
+            "sscrp_detail_done;" +
+            "sscrp_detail_temp;" +
+            "sscrp_fieldmap;" +
+            "sscrp_fieldmap_b;" +
+            "sscrp_publicfield;" +
+            "sscrp_refreshaction;" +
+            "sscrp_usermenu;" +
             "sscsfm_evaluated;" +
+            "sscsfm_evaluated_detail;" +
             "sscsfm_evaluation_dimension;" +
             "sscsfm_evaluation_rule;" +
             "sscsfm_evaluation_rule_detail;" +
             "sscsfm_unevaluate;" +
             "sscsfm_unsatisfied_reason;" +
-            "ssctp_comparison_result;" +
-            "ssctp_points_result;" +
-            "ssctp_problem_result;" +
-            "ssctp_accessoryshow;" +
-            "ssctp_allotrule_b;" +
-            "ssctp_allotrule;" +
-            "ssctp_approve_log;" +
-            "ssctp_approvemonitor;" +
-            "ssctp_approverule;" +
-            "ssctp_approverule_b;" +
-            "ssctp_clientage;" +
-            "ssctp_detailopen;" +
-            "ssctp_dutystatelog;" +
-            "ssctp_eventlistener;" +
-            "ssctp_taskmap;" +
-            "ssctp_idispatchusers;" +
-            "ssctp_imagshow;" +
-            "ssctp_intellidispatchlog;" +
-            "ssctp_intellidispatchrule;" +
-            "ssctp_intellidispatchrule_b;" +
-            "ssctp_ots;" +
-            "ssctp_printrule_head;" +
-            "ssctp_printrule_body;" +
-            "ssctp_priority;" +
-            "ssctp_ranking;" +
-            "ssctp_laderule_b;" +
-            "ssctp_laderule;" +
-            "ssctp_node;" +
-            "ssctp_currenttask;" +
-            "ssctp_taskextendinfo;" +
-            "ssctp_task;" +
-            "ssctp_flowpath;" +
-            "ssctp_unit;" +
-            "ssctp_tasktype;" +
-            "ssctp_voucheropen;" +
-            "ssctp_workflowuser;" +
-            "ssctp_workinggroup;" +
-            "ssctp_workinggroup_user;" +
-            "ssc_fbannexpermissions;" +
-            "ssc_fbbusiaction;" +
-            "pub_ncwebpubbsplugin;" +
-            "ssc_fbtransconfig;" +
-            "ssc_fbtranslog;" +
-            "LFW_ZDYDJ;" +
-            "LFW_ZDYDJ_B;" +
-            "pub_riafbaction;" +
-            "pub_riawftxsetup;" +
-            "cp_menuitem;" +
-            "cp_faq;" +
-            "cp_gz_condition;" +
-            "cp_resource;" +
-            "cp_doc_sysattrtype;" +
-            "cp_orgaccredit;" +
-            "cp_print_template;" +
-            "cp_res;" +
-            "cp_print_condition;" +
-            "cp_templatedept;" +
-            "cp_psndoc;" +
-            "cp_rolegroup;" +
-            "cp_datacopy;" +
-            "cp_filelock;" +
-            "cp_doc_objrel;" +
-            "cp_queryscheme;" +
-            "cp_sysinittemp;" +
-            "cp_role;" +
-            "cp_doc;" +
-            "cp_roleorg;" +
-            "cp_templateorg;" +
-            "cp_appsnode;" +
-            "cp_eventlistener;" +
-            "cp_doc_attr;" +
-            "cp_templateuser;" +
-            "cp_psnjob;" +
-            "cp_datacopyconfig;" +
-            "cp_orgs;" +
-            "cp_scancfg;" +
-            "cp_dsconfig;" +
-            "cp_resaccredit;" +
-            "cp_device;" +
-            "cp_ldapimportcfg;" +
-            "cp_subfunc;" +
-            "cp_rulescheme;" +
-            "cp_appscategory;" +
-            "cp_doc_effect;" +
-            "cp_user;" +
-            "cp_usergrouprole;" +
-            "cp_doc_sysattr;" +
-            "cp_module;" +
-            "cp_doc_list;" +
-            "cp_resp_func;" +
-            "cp_doc_type;" +
-            "cp_freenode;" +
-            "cp_menucategory;" +
-            "cp_sysinit;" +
-            "cp_query_template;" +
-            "cp_gz_template;" +
-            "cp_relappsnode;" +
-            "cp_roleres;" +
-            "cp_templaterole;" +
-            "cp_resp_res;" +
-            "cp_responsibility;" +
-            "cp_usergroup;" +
-            "cp_usergroupuser;" +
-            "cp_userrole;" +
-            "cp_eventtype;" +
-            "cp_rolefunnode;" +
-            "cp_query_condition;" +
-            "cp_roleresp;";
+            "SSCTP_ACCESSORYSHOW;" +
+            "SSCTP_ALLOTRULE;" +
+            "SSCTP_ALLOTRULE_B;" +
+            "SSCTP_APPROVE_LOG;" +
+            "SSCTP_APPROVEMONITOR;" +
+            "SSCTP_APPROVERULE;" +
+            "SSCTP_APPROVERULE_B;" +
+            "ssctp_billopen;" +
+            "ssctp_billopenparam;" +
+            "SSCTP_CLIENTAGE;" +
+            "SSCTP_COMPARISON_RESULT;" +
+            "SSCTP_CURRENTTASK;" +
+            "SSCTP_DETAILOPEN;" +
+            "SSCTP_DUTYSTATELOG;" +
+            "SSCTP_EVENTLISTENER;" +
+            "SSCTP_FLOWPATH;" +
+            "SSCTP_IDISPATCHUSERS;" +
+            "SSCTP_IMAGSHOW;" +
+            "SSCTP_INTELLIDISPATCHLOG;" +
+            "SSCTP_INTELLIDISPATCHRULE;" +
+            "SSCTP_INTELLIDISPATCHRULE_B;" +
+            "SSCTP_LADERULE;" +
+            "SSCTP_LADERULE_B;" +
+            "SSCTP_NODE;" +
+            "SSCTP_OTS;" +
+            "SSCTP_POINTS_RESULT;" +
+            "SSCTP_PRINTRULE_BODY;" +
+            "SSCTP_PRINTRULE_HEAD;" +
+            "SSCTP_PRIORITY;" +
+            "SSCTP_PROBLEM_RESULT;" +
+            "SSCTP_RANKING;" +
+            "ssctp_sscextbillmap;" +
+            "ssctp_sscexttype;" +
+            "SSCTP_TASK;" +
+            "SSCTP_TASKEXTENDINFO;" +
+            "SSCTP_TASKMAP;" +
+            "SSCTP_TASKTYPE;" +
+            "SSCTP_UNIT;" +
+            "SSCTP_VOUCHEROPEN;" +
+            "SSCTP_WORKFLOWUSER;" +
+            "SSCTP_WORKINGGROUP;" +
+            "SSCTP_WORKINGGROUP_USER;" +
+            "webdbl_bizinfmapvo;" +
+            "webdbl_enumvalue;" +
+            "webdbl_mdenumtype;" +
+            "webdbl_sysmutexinfo;" +
+            "webdbl_sysrelyinfo;" +
+            "webdbl_uitemp;" +
+            "wfm_freeform;" +
+            "wfm_formtemplate;" +
+            "wfm_formdef;" +
+            "wfm_formtype;";
 
 //    public static void main(String[] args) {
 //        String stable[] = TablesDefine1.ssctable.split(";");
