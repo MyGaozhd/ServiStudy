@@ -6,7 +6,7 @@ spring:
   datasource:
     driver-class-name: oracle.jdbc.driver.OracleDriver
     url: jdbc:oracle:thin:@ 10.10.18.70:1521:orcl
-    username: fenku_1225_core
+    username: fenku_0104_core
     password: 1
   main:
     allow-bean-definition-overriding: true
