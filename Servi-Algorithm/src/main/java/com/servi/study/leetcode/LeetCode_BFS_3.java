@@ -13,6 +13,8 @@ public class LeetCode_BFS_3 {
      * 3      7
      * 1   4  6   8
      * 0  2           9
+     *
+     * [5, 7, 3, 1, 4, 6, 8, 9, 2, 0]
      */
     public static void main(String[] args) {
 
