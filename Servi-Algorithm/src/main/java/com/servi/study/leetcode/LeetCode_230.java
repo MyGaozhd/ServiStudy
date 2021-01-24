@@ -14,12 +14,18 @@ package com.servi.study.leetcode;
  */
 public class LeetCode_230 {
 
+    public static void main(String[] args) {
+
+        TreeNode node1 = new TreeNode(1);
+        System.out.println(new LeetCode_230().kthSmallest(node1, 1));
+    }
+
     private int count;
     private int kth;
 
     public int kthSmallest(TreeNode root, int k) {
 
-        kthSmallest1(root.left, k);
+        kthSmallest1(root, k);
         return kth;
     }
 
@@ -29,12 +35,15 @@ public class LeetCode_230 {
             return;
         }
 
-        kthSmallest1(root.left, k);
+        if (root.left != null) {
+            kthSmallest1(root.left, k);
+        }
+
         count++;
         if (count == k) {
             kth = root.val;
             return;
-        } else {
+        } else if (count < k && root.right != null) {
             kthSmallest1(root.right, k);
         }
     }
