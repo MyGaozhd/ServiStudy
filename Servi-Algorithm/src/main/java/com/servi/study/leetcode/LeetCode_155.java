@@ -44,7 +44,6 @@ public class LeetCode_155 {
         public void push(int x) {
 
             xStack.push(x);
-            //��С��xStack��ͬ��Ԫ�ش洢��Сֵ
             minStack.push(Math.min(minStack.peek(), x));
         }
 

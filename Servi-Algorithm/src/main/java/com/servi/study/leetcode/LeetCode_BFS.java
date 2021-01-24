@@ -43,7 +43,7 @@ public class LeetCode_BFS {
 		queue.add(root);
 
 		while (!queue.isEmpty()) {
-			TreeNode curr = queue.remove();
+			TreeNode curr = queue.poll();
 			visited.add(curr.val);
 			if (curr.left != null) {
 				queue.add(curr.left);
