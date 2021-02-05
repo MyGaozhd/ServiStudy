@@ -13,7 +13,15 @@ public class LeetCode_BitwiseOperation {
 //        m1();
         // 或运算
 //        m2();
-        m3();
+//        m3();
+//        m4();
+//        m5();
+        System.out.println(System.currentTimeMillis());
+        System.out.println(m6(30));
+        System.out.println(System.currentTimeMillis());
+//        System.out.println(m7(30));
+        System.out.println(m8(30));
+        System.out.println(System.currentTimeMillis());
     }
 
     // 与运算：两个位都为1时，结果才为1；0&0=0 0&1=0 1&0=0 1&1=1
@@ -125,5 +133,84 @@ public class LeetCode_BitwiseOperation {
         a = a ^ b;
         System.out.println("a=2,a=" + Integer.toBinaryString(a));
         System.out.println("b=5,b=" + Integer.toBinaryString(b));
+    }
+
+    //取反运算符 (~) ~1=0  ~0=1
+    private static void m4() {
+
+        //1）使一个数的最低位为零
+        // 使a的最低位为0，可以表示为：a & ~1。~1的值为 1111 1111 1111 1110，再按"与"运算，最低位一定为0。
+        // 因为“ ~”运算符的优先级比算术运算符、关系运算符、逻辑运算符和其他运算符都高。
+        int a = 5;
+        System.out.println("a=5,a=" + Integer.toBinaryString(a));
+        a = a & ~1;
+        System.out.println("a=" + a + ",a=" + Integer.toBinaryString(a));
+    }
+
+    //移位运算符（<<）
+    public static void m5() {
+
+        //定义：将一个运算对象的各二进制位全部左移若干位（左边的二进制位丢弃，右边补0）。
+        //
+        //设 a=1010 1110，a = a<< 2 将a的二进制位左移2位、右补0，即得a=1011 1000。
+        //
+        //若左移时舍弃的高位不包含1，则每左移一位，相当于该数乘以2。
+
+        int a = Integer.MAX_VALUE;
+        System.out.println("a=" + a + ",a=" + Integer.toBinaryString(a));
+        a = a << 2;
+        System.out.println("a=" + a + ",a<<2:" + Integer.toBinaryString(a));
+
+        a = Integer.MAX_VALUE;
+        System.out.println("a=" + a + ",a=" + Integer.toBinaryString(a));
+        a = a >> 2;
+        System.out.println("a=" + a + ",a>>2:" + Integer.toBinaryString(a));
+
+        a = Integer.MAX_VALUE;
+        System.out.println("a=" + a + ",a=" + Integer.toBinaryString(a));
+        a = a >>> 2;
+        System.out.println("a=" + a + ",a<<<2:" + Integer.toBinaryString(a));
+
+    }
+
+    //2的31次幂的累加和
+    public static int m6(int n) {
+        if (n == 0) {
+            return 1;
+        }
+
+        int tmp = 1;
+        int value = 1;
+        for (int i = 1; i <= n; i++) {
+            tmp *= 2;
+            value += tmp;
+        }
+        return value;
+    }
+
+    //2的31次幂的累加和
+    public static int m7(int n) {
+        if (n == 0) {
+            return 1;
+        }
+
+        int tmp = 1;
+        int value = tmp << n;
+        System.out.println("value=" + value + ",value=" + Integer.toBinaryString(value));
+        tmp = ~value;
+        System.out.println("tmp=" + tmp + ",tmp=" + Integer.toBinaryString(tmp));
+        tmp = ~(tmp + 1);
+        System.out.println("tmp=" + tmp + ",tmp=" + Integer.toBinaryString(tmp));
+        return value ^ tmp;
+    }
+
+    //2的30次幂的累加和
+    public static int m8(int n) {
+        if (n == 0) {
+            return 1;
+        }
+
+        int value = 1 << n;
+        return value ^ (value - 1);
     }
 }
