@@ -47,8 +47,8 @@ public class LeetCode_50 {
     }
 
     public double fastPow(double x, int n) {
-        if (n == 1) {
-            return x;
+        if (n == 0) {
+            return 1.0;
         }
 
         double result = fastPow(x, n / 2);
