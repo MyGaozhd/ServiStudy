@@ -1,7 +1,4 @@
+#指定默认加载的文件[application-rocket.yml]
 spring:
-  rabbitmq:
-    host: 10.6.195.250
-    template:
-      exchange: exchange_demo
-      routing-key: routingkey_demo
-      default-receive-queue: queue_demo
+  profiles:
+    active: rocket
