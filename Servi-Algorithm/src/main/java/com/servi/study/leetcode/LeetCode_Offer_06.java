@@ -42,6 +42,23 @@ public class LeetCode_Offer_06 {
         list.add(node.val);
     }
 
+
+    public int[] reversePrint2(ListNode head) {
+        ListNode node = head;
+        int count = 0;
+        while (node != null) {
+            count++;
+            node = node.next;
+        }
+        node = head;
+        int[] arr = new int[count];
+        for (int i = count - 1; i >= 0; --i) {
+            arr[i] = node.val;
+            node = node.next;
+        }
+        return arr;
+    }
+
     public class ListNode {
         int val;
         ListNode next;
